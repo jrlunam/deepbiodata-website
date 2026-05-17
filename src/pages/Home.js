@@ -1,8 +1,13 @@
+// src/pages/Home.js
+import React from 'react';
+import './Home.css';
+
 function Home() {
   return (
-    <div className="page">
-      <h1>Welcome to Our Company</h1>
-      <p>We create amazing digital solutions for businesses</p>
+    <div className="background-page">
+      <img src="/Logo.jpeg" alt="DeepBiodata Logo" className="logo" />
+      <h1>Welcome to DeepBiodata</h1>
+      <p>Your bioinformatics solutions partner.</p>
     </div>
   );
 }

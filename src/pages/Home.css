@@ -1,0 +1,55 @@
+/* src/pages/Home.css */
+/*.home-page {
+  background: linear-gradient(to right, #007BFF, #00FF88); 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}*/
+
+/* src/pages/Home.css */
+.background-page {
+  background-image: url('/public/BackGround.jpeg'); /* Use the same image path */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  text-align: left;
+  padding: 2rem;
+}
+
+/* Existing .home-page class can inherit from .background-page */
+/*.home-page {*/
+  /* No need to redefine background styles */
+/*}*/
+
+
+
+/*.home-page {
+  background-image: url('/public/BackGround.jpeg'); 
+  background-size: cover;                    
+  background-position: center;                
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}*/
+
+
+/* src/pages/Home.css */
+.logo {
+  width: 150px; /* Adjust as needed */
+  margin-bottom: 1rem;
+}

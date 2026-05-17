@@ -1,12 +1,12 @@
+// src/pages/Works.js
+import React from 'react';
+import '../pages/Home.css';
+
 function Works() {
   return (
-    <div className="page">
+    <div className="background-page">
       <h1>Our Works</h1>
-      <div className="projects">
-        <div className="project">Project 1</div>
-        <div className="project">Project 2</div>
-        <div className="project">Project 3</div>
-      </div>
+      <p>Explore our projects and solutions.</p>
     </div>
   );
 }

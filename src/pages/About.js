@@ -1,8 +1,12 @@
+// src/pages/About.js
+import React from 'react';
+import '../pages/Home.css'; // Import the shared CSS
+
 function About() {
   return (
-    <div className="page">
+    <div className="background-page">
       <h1>About Us</h1>
-      <p>Our company was founded in 2023 with the mission to deliver...</p>
+      <p>Learn more about DeepBiodata and our mission.</p>
     </div>
   );
 }

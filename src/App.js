@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Works from './pages/Works';
 import Team from './pages/Team';
+import Contact from './pages/Contact';
 import './styles.css';
 
 function App() {
@@ -10,10 +11,14 @@ function App() {
     <Router>
       <div className="app">
         <nav className="navbar">
-          <Link to="/">Home</Link>
+          <img src="/Logo.jpeg" alt="DeepBiodata Logo" className="navbar-logo" />
+          <div className="nav-links">
+          <Link to="/" className="company-name">DeepBiodata</Link>
           <Link to="/about">About Us</Link>
           <Link to="/works">Our Works</Link>
           <Link to="/team">Our Team</Link>
+          <Link to="/contact">Contact</Link> 
+          </div>
         </nav>
         
         <div className="content">
@@ -22,6 +27,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/works" element={<Works />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
       </div>
