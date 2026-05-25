@@ -5,7 +5,7 @@ import '../pages/Home.css';
 function Contact() {
   return (
     //<div className="contact-page">
-    <div className="background-page">
+    <div className="home-page">
       <h1>Contact Us</h1>
       <p>Get in touch with DeepBiodata:</p>
       <ul>
@@ -17,8 +17,8 @@ function Contact() {
         </li>
         <li>
           <strong>Phone:</strong> 
-          <a href="tel:+1234567890" style={{ marginLeft: '0.5rem', color: '#007BFF' }}>
-            +1 (234) 567-890
+          <a href="tel:+34650977701" style={{ marginLeft: '0.5rem', color: '#007BFF' }}>
+            +34 650 977 701
           </a>
         </li>
       </ul>

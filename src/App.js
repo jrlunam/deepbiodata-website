@@ -14,7 +14,6 @@ function App() {
           <img src="/Logo.jpeg" alt="DeepBiodata Logo" className="navbar-logo" />
           <div className="nav-links">
           <Link to="/" className="company-name">DeepBiodata</Link>
-          <Link to="/about">About Us</Link>
           <Link to="/works">Our Works</Link>
           <Link to="/team">Our Team</Link>
           <Link to="/contact">Contact</Link> 
@@ -24,7 +23,6 @@ function App() {
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/works" element={<Works />} />
             <Route path="/team" element={<Team />} />
             <Route path="/contact" element={<Contact />} />
