@@ -14,7 +14,7 @@ function Team() {
 
         <section className="section">
           <h2>Stella Luna</h2>
-          <img src="/public/estela.jpeg" alt="Stella Luna" className="portrait" />
+          <img src="/estela.jpeg" alt="Stella Luna" className="portrait" />
           <h3>Chief Executive Officer (CEO)</h3>
           <p>
             Stella Luna is a senior specialist with more than 20 years of experience in data analytics, Machine Learning, and the leadership of advanced data-driven projects. She holds degrees in Mathematics and Physics from the Autonomous University of Madrid (UAM), combining strong theoretical foundations with extensive practical experience in applied scientific analytics and AI methodologies.
@@ -42,7 +42,7 @@ function Team() {
 
         <section className="section">
           <h2>Jose Ramon Luna</h2>
-          <img src="/public/ramon.jpeg" alt="Ramon Luna" className="portrait" />
+          <img src="/ramon.jpeg" alt="Ramon Luna" className="portrait" />
           <h3>Chief Data Officer (CDO)</h3>
           <p>
             Jose Ramon Luna is a specialist with more than 20 years of experience in Data Analytics, Machine Learning, and Artificial Intelligence across multiple sectors, with a particular focus on healthcare and biomedical applications. He holds degrees in Physics and Mathematics from the Autonomous University of Madrid (UAM), and a Master’s Degree in Risk Management from the MEFF Institute.
