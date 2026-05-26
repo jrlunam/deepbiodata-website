@@ -21,6 +21,7 @@ function Works() {
 
         <section className="section">
           <h2>COVID-19 Pandemic Modeling & Predictive Intelligence</h2>
+          <img src="/covid_1.png" alt="Covid Research" className="homePict" />
           <p>
             One of our major analytical initiatives focused on the modeling and prediction of COVID-19 diffusion dynamics during the pandemic period.
           </p>
@@ -45,7 +46,7 @@ function Works() {
 
         <section className="section">
           <h2>Supporting Public-Health Decision Making</h2>
-          <p>
+            <img src="/covid_2.png" alt="Covid Research" className="homePict" />          <p>
             Our predictive systems contributed to analytical and operational support activities aligned with European public-health objectives during the pandemic response period.
           </p>
           <ul>
@@ -66,6 +67,7 @@ function Works() {
 
         <section className="section">
           <h2>Advanced AI & Predictive Modeling</h2>
+          <img src="/covid_3.png" alt="Covid Research" className="homePict" />
           <h3>Clinical Predictive Systems</h3>
           <ul>
             <li>Disease-risk prediction</li>
@@ -93,6 +95,7 @@ function Works() {
 
         <section className="section">
           <h2>Explainable & Trustworthy AI</h2>
+          <img src="/covid_4.png" alt="Covid Research" className="homePict" />
           <p>
             A major focus of our work is ensuring that advanced AI systems remain transparent, auditable, and clinically meaningful.
           </p>
@@ -106,6 +109,7 @@ function Works() {
 
         <section className="section">
           <h2>Research & Collaboration</h2>
+          <img src="/covid_5.png" alt="Covid Research" className="homePict" />
           <p>
             Deep Bio Data actively collaborates with:
           </p>
