@@ -68,6 +68,11 @@
   margin-bottom: 1rem;
 }
 
+.portrait {
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
 .content {
   max-width: 90%; /* Use 90% of viewport width */
   width: 100%;
