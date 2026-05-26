@@ -8,12 +8,14 @@ function Home() {
       <img src="/Logo.jpeg" alt="DeepBiodata Logo" className="logo" />
       <div className="content">
         <h1>Deep Bio Data</h1>
+        <img src="/home_2.png" alt="Clinic Research" className="homePict" />
         <p>
           Advancing Clinical Research Through Causal AI, Bias Control, and Explainable Intelligence
         </p>
 
         <section className="section">
           <h2>Our Mission</h2>
+          <img src="/home_1.png" alt="Clinic Research" className="homePict" />
           <p>
             Deep Bio Data is a research-driven technology initiative focused on improving the reliability, transparency, and predictive power of modern clinical data analysis. We collaborate with hospitals, clinical research groups, and biomedical institutions to address one of the major challenges in contemporary healthcare analytics: ensuring that advanced Artificial Intelligence systems are not only accurate, but also scientifically trustworthy, interpretable, and clinically meaningful.
           </p>
@@ -21,6 +23,7 @@ function Home() {
 
         <section className="section">
           <h2>What We Do</h2>
+          <img src="/home_3.png" alt="What We Do" className="homePict" />
           <h3>Bias Analysis & Causal Inference</h3>
           <ul>
             <li>Detect, quantify, and mitigate statistical and demographic bias in biomedical datasets</li>
@@ -29,6 +32,7 @@ function Home() {
           </ul>
 
           <h3>AI & Predictive Modeling</h3>
+          <img src="/home_5.png" alt="What We Do" className="homePict" />
           <ul>
             <li>Classical statistical models</li>
             <li>Random Forest and Gradient Boosting</li>
@@ -37,6 +41,7 @@ function Home() {
           </ul>
 
           <h3>Explainable & White-Box AI</h3>
+          <img src="/home_4.png" alt="What We Do" className="homePict" />
           <ul>
             <li>Understand which variables drive predictions</li>
             <li>Visualize relevant imaging regions</li>
@@ -46,6 +51,7 @@ function Home() {
 
         <section className="section">
           <h2>Our Vision</h2>
+          <img src="/home_6.png" alt="What We Do" className="homePict" />
           <p>
             We envision a new generation of biomedical AI where:
           </p>
