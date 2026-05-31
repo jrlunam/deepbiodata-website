@@ -1,22 +1,27 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import About from './pages/About';
 import Works from './pages/Works';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
 import './styles.css';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
   return (
     <Router>
       <div className="app">
         <nav className="navbar">
           <img src="/Logo.jpeg" alt="DeepBiodata Logo" className="navbar-logo" />
-          <div className="nav-links">
-          <Link to="/" className="company-name">DeepBiodata</Link>
-          <Link to="/works">Our Works</Link>
-          <Link to="/team">Our Team</Link>
-          <Link to="/contact">Contact</Link> 
+          <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            ☰
+          </div>
+          <div className={`nav-links ${isMenuOpen ? 'mobile-menu' : ''}`}>
+            <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
+            <Link to="/works" onClick={() => setIsMenuOpen(false)}>Our Works</Link>
+            <Link to="/team" onClick={() => setIsMenuOpen(false)}>Our Team</Link>
+            <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </div>
         </nav>
         

@@ -4,11 +4,12 @@
   display: flex;
   align-items: center;
   padding: 0.5rem 1rem;
+  position: relative;
 }
 
 .navbar-logo {
   height: 40px;
-  margin-right: 1.5rem; /* Default spacing */
+  margin-right: 1.5rem;
 }
 
 .nav-links {
@@ -29,18 +30,59 @@
   background-color: #555;
 }
 
-/* Responsive adjustments for mobile */
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+}
+
+/* Mobile menu styles */
+.nav-links.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  flex-direction: column;
+  gap: 0;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.nav-links.mobile-menu a {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0.5rem 0;
+}
+
+/* Responsive adjustments */
 @media (max-width: 600px) {
-  ..navbar-logo {
-    margin-right: 0.5rem; /* Reduce spacing on mobile */
+  .navbar-logo {
+    margin-right: 0.5rem;
   }
 
   .nav-links {
-    gap: 0.5rem; /* Smaller spacing between links */
+    gap: 0.5rem;
   }
 
   .navbar a {
-    font-size: 0.9rem; /* Smaller text for mobile */
-    padding: 6px 12px; /* Smaller padding */
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.mobile-menu {
+    display: flex;
   }
 }
