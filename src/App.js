@@ -18,6 +18,11 @@ function App() {
             ☰
           </div>
           <div className={`nav-links ${isMenuOpen ? 'mobile-menu' : ''}`}>
+            {isMenuOpen && (
+              <div className="close-button" onClick={() => setIsMenuOpen(false)}>
+                &times;
+              </div>
+            )}
             <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link to="/works" onClick={() => setIsMenuOpen(false)}>Our Works</Link>
             <Link to="/team" onClick={() => setIsMenuOpen(false)}>Our Team</Link>

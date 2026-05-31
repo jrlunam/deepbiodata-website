@@ -5,6 +5,7 @@
   align-items: center;
   padding: 0.5rem 1rem;
   position: relative;
+  z-index: 1000; /* Ensure navbar is above other content */
 }
 
 .navbar-logo {
@@ -42,47 +43,45 @@
 /* Mobile menu styles */
 .nav-links.mobile-menu {
   position: absolute;
-  top: 100%;
+  top: 100%; /* Position below navbar */
   left: 0;
   right: 0;
   background-color: #333;
   flex-direction: column;
   gap: 0;
   padding: 1rem;
-  z-index: 10;
+  z-index: 1001; /* Ensure menu appears above everything */
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Ensure links are visible and take full width */
 .nav-links.mobile-menu a {
   display: block;
   width: 100%;
   text-align: left;
   margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  border-radius: 4px;
 }
 
-/* Responsive adjustments */
+/* Close button */
+.close-button {
+  text-align: right;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Hide default links on mobile */
 @media (max-width: 600px) {
-  .navbar-logo {
-    margin-right: 0.5rem;
-  }
-
-  .nav-links {
-    gap: 0.5rem;
-  }
-
-  .navbar a {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
   .nav-links {
     display: none;
   }
 
-  .nav-links.mobile-menu {
-    display: flex;
+  .hamburger {
+    display: block;
   }
 }
