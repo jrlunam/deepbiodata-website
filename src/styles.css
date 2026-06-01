@@ -52,6 +52,11 @@
   .hamburger {
     display: block;
   }
+
+  .content {
+    padding-left: 0.5rem; /* Reduce from default 1rem to 0.5rem */
+    margin-left: 0;
+  }
   
   .nav-links.mobile-menu {
     display: flex;
@@ -108,7 +113,7 @@
     width: 100%;
     margin-bottom: 1rem;
   }
-    
+
 }
 
 @keyframes slideDown {
