@@ -10,6 +10,7 @@
 
 .navbar-logo {
   height: 40px;
+  width: auto;
   margin-right: 1.5rem;
 }
 
@@ -89,6 +90,25 @@
   .nav-links.mobile-menu {
     animation: slideDown 0.3s ease-out;
   }
+
+  /* Make content images full width on mobile */
+  .content img {
+    width: 100%;
+    object-fit: cover; /* Or 'contain' depending on your preference */
+  }
+
+  /* If you have hero images or banners */
+  .hero-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* For image galleries or multiple images */
+  .image-gallery img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+    
 }
 
 @keyframes slideDown {
@@ -100,4 +120,15 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.content img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Removes extra spacing below images */
 }
