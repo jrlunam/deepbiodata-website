@@ -14,20 +14,33 @@ function App() {
       <div className="app">
         <nav className="navbar">
           <img src="/Logo.jpeg" alt="DeepBiodata Logo" className="navbar-logo" />
-          <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+
+          {/*<div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             ☰
+          </div>*/}
+
+          {/* The Hamburger Button (Only shows on mobile) */}
+          <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? '✖' : '☰'}
           </div>
+          
           <div className={`nav-links ${isMenuOpen ? 'mobile-menu' : ''}`}>
-            {isMenuOpen && (
-              <div className="close-button" onClick={() => setIsMenuOpen(false)}>
-                &times;
-              </div>
-            )}
+              {/* {isMenuOpen && (
+    <div className="close-button" onClick={() => setIsMenuOpen(false)}>
+      &times;
+    </div>
+  )} */}
             <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link to="/works" onClick={() => setIsMenuOpen(false)}>Our Works</Link>
             <Link to="/team" onClick={() => setIsMenuOpen(false)}>Our Team</Link>
             <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </div>
+          {isMenuOpen && (
+            <div className="close-button" onClick={() => setIsMenuOpen(false)}>
+              &times;
+            </div>
+    
+          )}
         </nav>
         
         <div className="content">
