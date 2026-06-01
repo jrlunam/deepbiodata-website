@@ -1,4 +1,4 @@
-/* styles.css - Complete working version */
+/* styles.css - Minimal working version */
 
 .navbar {
   background-color: #333;
@@ -6,7 +6,6 @@
   align-items: center;
   padding: 0.5rem 1rem;
   position: relative;
-  z-index: 1000;
 }
 
 .navbar-logo {
@@ -14,14 +13,10 @@
   margin-right: 1.5rem;
 }
 
-/* Desktop styles - links in a row */
 .nav-links {
   display: flex;
   gap: 1rem;
   margin-left: auto;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .navbar a {
@@ -29,82 +24,42 @@
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
-  transition: background 0.3s;
-  display: inline-block;
 }
 
-.navbar a:hover {
-  background-color: #555;
-}
-
-/* Hamburger button - hidden on desktop */
 .hamburger {
   display: none;
   font-size: 2rem;
   cursor: pointer;
   color: white;
   margin-left: auto;
-  background: none;
-  border: none;
-  padding: 0 10px;
 }
 
-.close-button {
-  display: none; /* Hidden by default */
-}
-
-/* MOBILE STYLES */
 @media (max-width: 600px) {
-  /* Hide regular nav-links on mobile */
   .nav-links {
     display: none;
   }
   
-  /* Show hamburger on mobile */
   .hamburger {
     display: block;
   }
   
-  /* When mobile-menu class is added, show the menu */
   .nav-links.mobile-menu {
-    display: flex !important;
+    display: flex;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background-color: #333;
     flex-direction: column;
-    gap: 0;
     padding: 1rem;
     z-index: 1001;
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
   
-  /* Style the links in mobile menu */
   .nav-links.mobile-menu a {
     display: block;
-    width: 100%;
-    text-align: left;
-    margin: 0.5rem 0;
     padding: 12px 16px;
+    margin: 5px 0;
     background-color: #444;
-    border-radius: 4px;
-  }
-  
-  /* Show close button only in mobile menu */
-  .nav-links.mobile-menu .close-button {
-    display: block;
-    text-align: right;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-    cursor: pointer;
-    color: white;
-    padding: 5px 10px;
-  }
-  
-  /* Close button hover effect */
-  .nav-links.mobile-menu .close-button:hover {
-    opacity: 0.8;
   }
 }
