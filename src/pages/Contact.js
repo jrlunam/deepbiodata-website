@@ -6,6 +6,7 @@ function Contact() {
   return (
     //<div className="contact-page">
     <div className="home-page">
+      <img src="/Logo.jpeg" alt="DeepBiodata Logo" className="logo" />
       <h1>Contact Us</h1>
       <p>Get in touch with DeepBiodata:</p>
       <ul>
