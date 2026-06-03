@@ -56,7 +56,7 @@
   .content {
     padding-left: 0.2rem; /* Reduce from default 1rem to 0.5rem */
     margin-left: 0;
-    padding-right: 0.0rem; /* Reduce from default 1rem to 0.5rem */
+    padding-right: 0.2rem; /* Reduce from default 1rem to 0.5rem */
     margin-right: 0; /* Negative margin to offset padding */
     width: 100%;
     box-sizing: border-box;

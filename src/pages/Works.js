@@ -7,23 +7,33 @@ function Works() {
     <div className="home-page">
       <img src="/Logo.jpeg" alt="DeepBiodata Logo" className="logo" />
       <div className="content">
-        <h1>Our Works</h1>
+        <h1>Our Credentials</h1>
         <p>
-          AI for Clinical Research, Public Health, and Explainable Biomedical Intelligence
+          We are a group of profesionals with more than 20 years of trajectory in IT , Data Science, Machine Learning and AI. We have been working on other industries like Banking, Capital Markets and Governance ( Public Policies) with a background in decision making backed on data, and risk management based on predictive models and forecasting. We have more than 10 international clients that can provide referrals of us of our previous work before jumping into Health. 
         </p>
 
-        <section className="section">
+        {/*<section className="section">
           <h2>Introduction</h2>
           <p>
             At Deep Bio Data, we develop advanced analytical and AI-driven solutions aimed at improving clinical research reliability, predictive healthcare systems, and public-health decision making. Our work combines causal inference, Machine Learning, Deep Learning, and explainable AI to address real-world biomedical and healthcare challenges.
           </p>
-        </section>
+        </section>*/}
 
         <section className="section">
           <h2>COVID-19 Pandemic Modeling & Predictive Intelligence</h2>
           <img src="/covid_1.png" alt="Covid Research" className="homePict" />
           <p>
-            One of our major analytical initiatives focused on the modeling and prediction of COVID-19 diffusion dynamics during the pandemic period.
+            In the Health arena, we developed a tool on Covid decision making, with three modules. The first module is for calculating the likelihood of death based on some blood biomarkers. The second module is a pneumonia predictor based on an X ray, and the third module is a covid spread predictor by geographical area. You can see our work in this website: <a 
+              href="https://www.covidadt.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ color: '#007BFF', textDecoration: 'none' }}
+            >
+              https://www.covidadt.com
+            </a>. 
+          </p>
+          <p>
+            This project has performed the next detailed analysis:
           </p>
           <ul>
             <li>Modeling virus diffusion patterns across regions and populations</li>

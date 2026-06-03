@@ -26,7 +26,7 @@ function App() {
           
           <div className={`nav-links ${isMenuOpen ? 'mobile-menu' : ''}`}>
             <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
-            <Link to="/works" onClick={() => setIsMenuOpen(false)}>Our Works</Link>
+            <Link to="/works" onClick={() => setIsMenuOpen(false)}>Our Credentials</Link>
             <Link to="/team" onClick={() => setIsMenuOpen(false)}>Our Team</Link>
             <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </div>
