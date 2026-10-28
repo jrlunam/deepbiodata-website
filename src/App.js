@@ -4,7 +4,8 @@ import Home from './pages/Home';
 import Works from './pages/Works';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
-import './styles.css';  // ← This should now work
+import './styles.css';
+import Gep from "./pages/Gep";  // ← This should now work
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,6 +29,7 @@ function App() {
             <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
             <Link to="/works" onClick={() => setIsMenuOpen(false)}>Our Credentials</Link>
             <Link to="/team" onClick={() => setIsMenuOpen(false)}>Our Team</Link>
+            <Link to="/gep" onClick={() => setIsMenuOpen(false)}>Gender Equality Plan</Link>
             <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
           </div>
         </nav>
@@ -37,6 +39,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/works" element={<Works />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/gep" element={<Gep />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
