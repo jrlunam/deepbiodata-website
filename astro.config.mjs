@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 import compressor from 'astro-compressor';
 import sitemap from '@astrojs/sitemap';
 import node from '@astrojs/node';
@@ -37,4 +37,7 @@ export default defineConfig({
     }),
     compressor(),
   ],
+  image: {
+    service: passthroughImageService(),
+  },
 });
