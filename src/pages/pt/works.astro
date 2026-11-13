@@ -1,0 +1,213 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { Image } from 'astro:assets';
+// TODO(imagem): covid-1 é uma ilustração AI de 492x384px melhorada por reescalonamento.
+// Pendente de substituição por uma captura real de covidadt.com ou uma versão HD.
+import covidShot from '../../assets/covid-1.png';
+---
+
+<BaseLayout
+  lang="pt"
+  title="O nosso percurso"
+  description="Mais de 20 anos em TI, Ciência de Dados e IA na Saúde, Banca e Políticas Públicas, incluindo a modelação da pandemia de COVID-19, sistemas preditivos clínicos e IA de imagem médica."
+>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">O nosso percurso</p>
+        <h1>Percurso comprovado em vários setores, com foco na saúde</h1>
+        <p class="lede">
+          Somos um grupo de profissionais com mais de 20 anos de percurso em TI, Ciência
+          de Dados, Machine Learning e IA. Antes de nos centrarmos na saúde, trabalhámos
+          em Banca, Mercados de Capitais e Governação (Políticas Públicas), com uma base
+          sólida na tomada de decisão apoiada em dados e na gestão de risco construída
+          sobre modelos preditivos e de previsão, com mais de 10 clientes internacionais
+          que podem atestar o nosso trabalho.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Caso em destaque COVID -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">Caso em destaque &middot; Saúde</p>
+        <h2>Modelação da pandemia de COVID-19 e inteligência preditiva</h2>
+        <p class="lede">
+          No domínio da saúde desenvolvemos uma ferramenta de apoio à decisão face à
+          COVID com três módulos: uma calculadora de probabilidade de óbito baseada em
+          biomarcadores sanguíneos, um preditor de pneumonia a partir de radiografia
+          torácica e um preditor de propagação geográfica da transmissão. O nosso
+          trabalho é público em
+          <a href="https://www.covidadt.com" rel="noopener">covidadt.com</a>.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <div class="reveal">
+          <h3>O projeto ofereceu uma análise detalhada de:</h3>
+          <ul style="margin-top: var(--space-3);">
+            <li>A modelação dos padrões de difusão do vírus por regiões e populações</li>
+            <li>A estimação da dinâmica de transmissão sob cenários variáveis de mobilidade e restrições</li>
+            <li>A previsão da pressão sobre o sistema de saúde e das tendências de internamento</li>
+            <li>O apoio à avaliação precoce de riscos e à previsão de surtos</li>
+            <li>A quantificação do impacto das estratégias de intervenção e mitigação</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <h3>O quadro analítico integrou:</h3>
+          <ul style="margin-top: var(--space-3);">
+            <li>Dados epidemiológicos temporais</li>
+            <li>Informação de mobilidade populacional</li>
+            <li>Variáveis demográficas e geográficas</li>
+            <li>Indicadores clínicos e de internamento</li>
+            <li>Conjuntos de dados públicos multissource de saúde pública</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="figure-block reveal" style="margin-top: var(--space-7); max-width: 56rem;">
+        <Image
+          src={covidShot}
+          alt="Ilustração da ferramenta de apoio à decisão de COVID-19 desenvolvida pela Deep Bio Data"
+          loading="lazy"
+          decoding="async"
+          widths={[400, 704]}
+          sizes="(max-width: 75rem) 100vw, 704px"
+          style="border-radius: 8px;"
+        />
+        <figcaption>
+          <strong>Fig. 01</strong> — Ferramenta de apoio à decisão de COVID-19: risco de
+          mortalidade a partir de biomarcadores sanguíneos, previsão de pneumonia por
+          imagem torácica e modelação da propagação geográfica.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Decisões de saúde pública -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Apoio à tomada de decisão em saúde pública</h2>
+        <p class="lede">
+          Os nossos sistemas preditivos contribuíram para atividades de apoio analítico e
+          operacional alinhadas com os objetivos europeus de saúde pública durante a
+          resposta à pandemia.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <div class="reveal">
+          <ul>
+            <li>Deteção precoce de zonas de elevada difusão</li>
+            <li>Priorização e planeamento de recursos</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <ul>
+            <li>Avaliação da eficácia das intervenções</li>
+            <li>Otimização de estratégias de mitigação</li>
+            <li>Redução do risco de colapso do sistema de saúde</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top: var(--space-6);">
+        <p>
+          O objetivo último era ajudar a reduzir tanto o <strong>impacto humano</strong>
+          — doença grave e mortalidade — como a <strong>perturbação económica e
+          social</strong> associadas a uma difusão descontrolada.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capacidades -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">Capacidades</p>
+        <h2>IA avançada e modelação preditiva</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="card reveal">
+          <span class="overline">01</span>
+          <h3>Sistemas preditivos clínicos</h3>
+          <ul>
+            <li>Previsão do risco de doença</li>
+            <li>Previsão de desfechos clínicos</li>
+            <li>Estratificação personalizada do risco</li>
+            <li>Modelação clínica multimodal</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="overline">02</span>
+          <h3>IA de imagem médica</h3>
+          <ul>
+            <li>Análise de imagem baseada em CNN e Transformers</li>
+            <li>Radómica e fusão multimodal</li>
+            <li>Inteligência de imagem explicável</li>
+            <li>Reconstrução de caixa branca de modelos profundos</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="overline">03</span>
+          <h3>IA causal e controlo do enviesamento</h3>
+          <ul>
+            <li>Identificação de enviesamento estatístico</li>
+            <li>Metodologias de propensity score</li>
+            <li>Pipelines de inferência causal</li>
+            <li>Validação de equidade e robustez</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explicabilidade -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>IA explicável e fiável</h2>
+        <p class="lede">
+          Um eixo central do nosso trabalho é que os sistemas de IA avançados permaneçam
+          transparentes, auditáveis e clinicamente relevantes.
+        </p>
+      </div>
+      <ul class="list-cols reveal">
+        <li>Explicar as decisões dos modelos</li>
+        <li>Identificar mecanismos preditivos clinicamente relevantes</li>
+        <li>Detetar enviesamentos ocultos e atalhos de aprendizagem</li>
+        <li>Reconstruir modelos de caixa negra em sistemas de caixa branca</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Investigação e colaboração -->
+  <section class="section section--warm">
+    <div class="container">
+      <div class="section-head">
+        <h2>Investigação e colaboração</h2>
+        <p class="lede">A Deep Bio Data colabora ativamente com:</p>
+      </div>
+      <ul class="list-cols reveal">
+        <li>Grupos de investigação clínica</li>
+        <li>Hospitais e instituições de saúde</li>
+        <li>Programas de inovação biomédica</li>
+        <li>Parceiros académicos e de saúde pública</li>
+      </ul>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Leve a nossa experiência ao seu projeto"
+    text="Da modelação da pandemia à IA de imagem clínica: já o fizemos antes e podemos explicar cada passo."
+  />
+</BaseLayout>

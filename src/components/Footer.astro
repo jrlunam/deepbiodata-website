@@ -1,0 +1,156 @@
+---
+const lang = Astro.props.lang ?? (Astro.url.pathname.startsWith('/es') ? 'es' : Astro.url.pathname.startsWith('/pt') ? 'pt' : 'en');
+const withLocale = (href: string) => {
+  if (href === '/') return `/${lang}/`;
+  return `/${lang}` + href;
+};
+
+// Enlace espejo a la misma página en cada idioma (igual que en el header).
+const pathNoLocale = Astro.url.pathname.replace(/^\/(en|es|pt)\/?/, '/') || '/';
+const localeHref = (target: 'en' | 'es' | 'pt') => {
+  const clean = pathNoLocale === '/' ? '/' : pathNoLocale.replace(/\/$/, '');
+  return clean === '/' ? `/${target}/` : `/${target}${clean}`;
+};
+
+const languages = [
+  { code: 'en' as const, label: 'EN', name: 'English' },
+  { code: 'es' as const, label: 'ES', name: 'Español' },
+  { code: 'pt' as const, label: 'PT', name: 'Português' },
+];
+
+const t =
+  lang === 'es'
+    ? {
+        tagline: 'IA transparente para la investigación clínica y la salud pública.',
+        site: 'Sitio',
+        home: 'Inicio',
+        services: 'Qué hacemos',
+        works: 'Trayectoria',
+        team: 'Equipo',
+        gep: 'Plan de Igualdad',
+        contact: 'Contacto',
+        contactHead: 'Contacto',
+        legal: 'Legal',
+        legalNotice: 'Aviso legal',
+        privacy: 'Política de Privacidad',
+        cookies: 'Política de Cookies',
+        accessibility: 'Accesibilidad',
+        rights: 'Todos los derechos reservados.',
+        language: 'Idioma',
+        langGroup: 'Idioma del sitio',
+        switchTo: 'Cambiar a',
+      }
+    : lang === 'pt'
+      ? {
+          tagline: 'IA transparente para a investigação clínica e a saúde pública.',
+          site: 'Site',
+          home: 'Início',
+          services: 'O que fazemos',
+          works: 'Percurso',
+          team: 'Equipa',
+          gep: 'Plano de Igualdade',
+          contact: 'Contacto',
+          contactHead: 'Contacto',
+          legal: 'Legal',
+          legalNotice: 'Aviso legal',
+          privacy: 'Política de Privacidade',
+          cookies: 'Política de Cookies',
+          accessibility: 'Acessibilidade',
+          rights: 'Todos os direitos reservados.',
+          language: 'Idioma',
+          langGroup: 'Idioma do site',
+          switchTo: 'Mudar para',
+        }
+      : {
+          tagline: 'Building transparent AI for clinical research and public health.',
+          site: 'Site',
+          home: 'Home',
+          services: 'What we do',
+          works: 'Credentials',
+          team: 'Team',
+          gep: 'Gender Equality Plan',
+          contact: 'Contact',
+          contactHead: 'Contact',
+          legal: 'Legal',
+          legalNotice: 'Legal notice',
+          privacy: 'Privacy Policy',
+          cookies: 'Cookies Policy',
+          accessibility: 'Accessibility',
+          rights: 'All rights reserved.',
+          language: 'Language',
+          langGroup: 'Site language',
+          switchTo: 'Switch to',
+        };
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <a class="site-footer__brand" href={withLocale('/')}>
+          <img src="/assets/logo-sm.webp" alt="Deep Bio Data logo" width="40" height="40" />
+          <span>Deep Bio Data</span>
+        </a>
+        <p class="site-footer__tagline">{t.tagline}</p>
+
+        <div class="site-footer__langs">
+          <h4>{t.language}</h4>
+          <div class="lang-switch__group" role="group" aria-label={t.langGroup}>
+            {
+              languages.map((item) => (
+                <a
+                  class="lang-switch__opt"
+                  href={localeHref(item.code)}
+                  data-lang-switch
+                  lang={item.code}
+                  hreflang={item.code}
+                  aria-current={lang === item.code ? 'true' : undefined}
+                  aria-label={lang === item.code ? `${item.label}: ${item.name}` : `${t.switchTo} ${item.name}`}
+                >
+                  {item.label}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4>{t.site}</h4>
+        <ul>
+          <li><a href={withLocale('/')}>{t.home}</a></li>
+          <li><a href={withLocale('/services')}>{t.services}</a></li>
+          <li><a href={withLocale('/works')}>{t.works}</a></li>
+          <li><a href={withLocale('/team')}>{t.team}</a></li>
+          <li><a href={withLocale('/gep')}>{t.gep}</a></li>
+          <li><a href={withLocale('/contact')}>{t.contact}</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>{t.contactHead}</h4>
+        <ul>
+          <li><a href="mailto:info@deepbiodata.com">info@deepbiodata.com</a></li>
+          <li><a href="tel:+351965636559">+351 965 636 559</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>{t.legal}</h4>
+        <ul>
+          <li><a href={withLocale('/legal-notice')}>{t.legalNotice}</a></li>
+          <li><a href={withLocale('/privacy-policy')}>{t.privacy}</a></li>
+          <li><a href={withLocale('/cookies-policy')}>{t.cookies}</a></li>
+          <li><a href={withLocale('/accessibility')}>{t.accessibility}</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <span>&copy; {year} Deep Bio Data. {t.rights}</span>
+      <span>Causal AI &middot; Bias Control &middot; Explainable Intelligence</span>
+    </div>
+  </div>
+</footer>

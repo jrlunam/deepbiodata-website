@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="pt"
+  noindex
+  title="Página não encontrada"
+  description="A página solicitada não existe ou foi movida. Volte à página inicial ou contacte-nos."
+>
+  <section class="section error-page">
+    <div class="container error-page__inner">
+      <p class="error-page__code" aria-hidden="true">404</p>
+
+      <div class="error-page__block" lang="pt">
+        <p class="overline">Erro 404</p>
+        <h1>Não encontrámos esta página</h1>
+        <p class="lede">
+          Pode ser que a ligação esteja quebrada ou que a página tenha sido movida.
+          Volte à página inicial ou escreva-nos e encaminhamo-lo.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="/pt/">Ir para a página inicial</a>
+          <a class="btn btn--secondary" href="/pt/contact">Contactar connosco</a>
+        </div>
+      </div>
+
+      <svg
+        class="causal-graph error-page__graph"
+        viewBox="0 0 480 300"
+        width="480"
+        height="300"
+        aria-hidden="true"
+      >
+        <path class="edge" d="M90 90 C 150 70, 190 70, 240 84"></path>
+        <path class="edge" d="M240 84 C 300 96, 340 120, 386 150"></path>
+        <path class="edge" d="M90 90 C 120 150, 140 190, 170 216"></path>
+        <path class="edge" d="M170 216 C 240 250, 310 250, 372 236"></path>
+        <path class="edge error-page__missing" d="M386 150 C 424 180, 436 214, 416 246" stroke-dasharray="2 8"></path>
+        <circle class="node" cx="90" cy="90" r="14"></circle>
+        <circle class="node node--accent" cx="240" cy="84" r="18"></circle>
+        <circle class="node" cx="386" cy="150" r="14"></circle>
+        <circle class="node" cx="170" cy="216" r="14"></circle>
+        <circle class="node" cx="372" cy="236" r="14"></circle>
+        <circle class="node node--lost" cx="420" cy="266" r="12"></circle>
+      </svg>
+    </div>
+  </section>
+
+  <script is:inline>
+    // A 404 não tem página espelho: cada opção do seletor leva à home do seu
+    // idioma (aplica ao seletor do header e ao do rodapé).
+    var homes = { en: '/en/', es: '/es/', pt: '/pt/' };
+    var fixHomes = function () {
+      document.querySelectorAll('a[data-lang-switch]').forEach(function (link) {
+        var code = link.getAttribute('hreflang');
+        if (homes[code]) link.setAttribute('href', homes[code]);
+      });
+    };
+    // El pie se renderiza despues de <main>: espera a que exista el DOM completo.
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', fixHomes);
+    } else {
+      fixHomes();
+    }
+  </script>
+</BaseLayout>

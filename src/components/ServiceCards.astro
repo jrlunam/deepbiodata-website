@@ -1,0 +1,48 @@
+---
+interface Card {
+  title: string;
+  text?: string;
+  items: string[];
+}
+
+interface Props {
+  cards: Card[];
+}
+
+const { cards } = Astro.props;
+
+// Iconos de las tarjetas de servicios (estructura fija, no editable).
+const icons = [
+  // Sesgo: balanza
+  '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M8 21h8M5 7h14"/><path d="M5 7 2 13a3 3 0 0 0 6 0Z"/><path d="M19 7l-3 6a3 3 0 0 0 6 0Z"/></svg>',
+  // Inferencia causal: grafo
+  '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="6" r="2.5"/><circle cx="19" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M7 7.5l3.5 8M17 7.5l-3.5 8"/></svg>',
+  // IA predictiva: serie temporal
+  '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16"/><path d="M7 15l4-5 3 3 5-7"/></svg>',
+  // Explicabilidad: ojo
+  '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>',
+  // IA fiable: escudo con check
+  '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg>',
+  // Conocimiento clínico: estetoscopio
+  '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v5a4 4 0 0 0 8 0V3"/><path d="M4 3h4M12 3h4"/><path d="M10 12v3a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="11" r="2"/></svg>',
+];
+---
+
+<div class="card-grid">
+  {
+    cards.map((card, index) => (
+      <article class="card reveal">
+        <span class="card__icon" aria-hidden="true" set:html={icons[index % icons.length]} />
+        <h3>{card.title}</h3>
+        {card.text && <p class="card__text">{card.text}</p>}
+        {card.items && (
+          <ul>
+            {card.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        )}
+      </article>
+    ))
+  }
+</div>

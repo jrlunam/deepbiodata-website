@@ -1,0 +1,162 @@
+---
+const path = Astro.url.pathname;
+const lang = path.startsWith('/es') ? 'es' : path.startsWith('/pt') ? 'pt' : 'en';
+const prefix = '/' + lang;
+const withLocale = (href: string) => {
+  if (href === '/') return `/${lang}/`;
+  return prefix + href;
+};
+
+// Enlace espejo a la misma página en cada idioma (sin recargar el sitio).
+const pathNoLocale = path.replace(/^\/(en|es|pt)\/?/, '/') || '/';
+const isActive = (href: string) => {
+  const norm = href.replace(/\/$/, '');
+  return norm === '' ? pathNoLocale === '/' : pathNoLocale === norm || pathNoLocale.startsWith(norm + '/');
+};
+
+const links =
+  lang === 'es'
+    ? [
+        { href: '/', label: 'Inicio' },
+        { href: '/services', label: 'Qué hacemos' },
+        { href: '/works', label: 'Trayectoria' },
+        { href: '/team', label: 'Equipo' },
+        { href: '/gep', label: 'Plan de Igualdad' },
+        { href: '/contact', label: 'Contacto' },
+      ]
+    : lang === 'pt'
+      ? [
+          { href: '/', label: 'Início' },
+          { href: '/services', label: 'O que fazemos' },
+          { href: '/works', label: 'Percurso' },
+          { href: '/team', label: 'Equipa' },
+          { href: '/gep', label: 'Plano de Igualdade' },
+          { href: '/contact', label: 'Contacto' },
+        ]
+      : [
+          { href: '/', label: 'Home' },
+          { href: '/services', label: 'What we do' },
+          { href: '/works', label: 'Credentials' },
+          { href: '/team', label: 'Team' },
+          { href: '/gep', label: 'Gender Equality Plan' },
+          { href: '/contact', label: 'Contact' },
+        ];
+
+// Enlace espejo a la misma página en cada idioma.
+const localeHref = (target: 'en' | 'es' | 'pt') => {
+  const clean = pathNoLocale === '/' ? '/' : pathNoLocale.replace(/\/$/, '');
+  return clean === '/' ? `/${target}/` : `/${target}${clean}`;
+};
+
+const languages = [
+  { code: 'en' as const, label: 'EN', name: 'English' },
+  { code: 'es' as const, label: 'ES', name: 'Español' },
+  { code: 'pt' as const, label: 'PT', name: 'Português' },
+];
+
+const t =
+  lang === 'es'
+    ? {
+        menu: 'Menú',
+        nav: 'Navegación principal',
+        cta: 'Colabora con nosotros',
+        langGroup: 'Idioma del sitio',
+        switchTo: 'Cambiar a',
+      }
+    : lang === 'pt'
+      ? {
+          menu: 'Menu',
+          nav: 'Navegação principal',
+          cta: 'Colabore connosco',
+          langGroup: 'Idioma do site',
+          switchTo: 'Mudar para',
+        }
+      : {
+          menu: 'Menu',
+          nav: 'Main navigation',
+          cta: 'Collaborate with us',
+          langGroup: 'Site language',
+          switchTo: 'Switch to',
+        };
+---
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-logo" href={withLocale('/')}>
+      <img src="/assets/logo-sm.webp" alt="Deep Bio Data logo" width="40" height="40" />
+      <span class="site-logo__name">Deep&nbsp;Bio&nbsp;Data</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-menu"
+    >
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      {t.menu}
+    </button>
+
+    <nav class="site-nav" id="site-menu" aria-label={t.nav}>
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              {link.href === '/contact' ? (
+                <a class="btn btn--primary" href={withLocale(link.href)}>
+                  {t.cta}
+                </a>
+              ) : (
+                <a href={withLocale(link.href)} aria-current={isActive(link.href) ? 'page' : undefined}>
+                  {link.label}
+                </a>
+              )}
+            </li>
+          ))
+        }
+        <li class="lang-switch">
+          <div class="lang-switch__group" role="group" aria-label={t.langGroup}>
+            {
+              languages.map((item) => (
+                <a
+                  class="lang-switch__opt"
+                  href={localeHref(item.code)}
+                  data-lang-switch
+                  lang={item.code}
+                  hreflang={item.code}
+                  aria-current={lang === item.code ? 'true' : undefined}
+                  aria-label={lang === item.code ? `${item.label}: ${item.name}` : `${t.switchTo} ${item.name}`}
+                >
+                  {item.label}
+                </a>
+              ))
+            }
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Re-inicializable: el header se vuelve a renderizar en cada navegación SPA.
+  const initHeader = () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('#site-menu');
+    if (!toggle || !nav || toggle.hasAttribute('data-header-bound')) return;
+    toggle.setAttribute('data-header-bound', '1');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+  };
+  initHeader();
+  document.addEventListener('astro:page-load', initHeader);
+</script>

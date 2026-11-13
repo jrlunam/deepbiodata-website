@@ -1,0 +1,16 @@
+{
+  "name": "Deep Bio Data",
+  "short_name": "Deep Bio Data",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0b3b5c",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

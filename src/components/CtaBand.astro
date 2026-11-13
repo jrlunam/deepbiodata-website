@@ -1,0 +1,64 @@
+---
+interface Props {
+  heading?: string;
+  text?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  secondaryLabel?: string;
+  secondaryHref?: string;
+}
+
+const lang = Astro.url.pathname.startsWith('/es') ? 'es' : Astro.url.pathname.startsWith('/pt') ? 'pt' : 'en';
+
+const defaults =
+  lang === 'es'
+    ? {
+        heading: 'Construyamos juntos una IA fiable',
+        text: 'Colaboramos con hospitales, institutos de investigación y programas de innovación que necesitan sistemas de IA que puedan explicar, validar y defender.',
+        primaryLabel: 'Colabora con nosotros',
+        primaryHref: '/es/contact',
+        secondaryLabel: 'Conoce nuestra trayectoria',
+        secondaryHref: '/es/works',
+        overline: 'Colaboración',
+      }
+    : lang === 'pt'
+      ? {
+          heading: 'Construamos juntos uma IA fiável',
+          text: 'Colaboramos com hospitais, institutos de investigação e programas de inovação que precisam de sistemas de IA que possam explicar, validar e defender.',
+          primaryLabel: 'Colabore connosco',
+          primaryHref: '/pt/contact',
+          secondaryLabel: 'Conheça o nosso percurso',
+          secondaryHref: '/pt/works',
+          overline: 'Colaboração',
+        }
+      : {
+          heading: "Let's build trustworthy AI together",
+          text: 'We collaborate with hospitals, research institutes and innovation programmes that need AI systems they can explain, validate and defend.',
+          primaryLabel: 'Collaborate with us',
+          primaryHref: '/en/contact',
+          secondaryLabel: 'See our credentials',
+          secondaryHref: '/en/works',
+          overline: 'Collaboration',
+        };
+
+const {
+  heading = defaults.heading,
+  text = defaults.text,
+  primaryLabel = defaults.primaryLabel,
+  primaryHref = defaults.primaryHref,
+  secondaryLabel = defaults.secondaryLabel,
+  secondaryHref = defaults.secondaryHref,
+} = Astro.props;
+---
+
+<section class="section section--surface cta-band">
+  <div class="container reveal">
+    <p class="overline">{defaults.overline}</p>
+    <h2>{heading}</h2>
+    <p class="lede">{text}</p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href={primaryHref}>{primaryLabel}</a>
+      <a class="btn btn--secondary" href={secondaryHref}>{secondaryLabel}</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import ServiceCards from '../../components/ServiceCards.astro';
+import home from '../../data/home.json';
+
+const t = home.pt.servicesPage;
+---
+
+<BaseLayout lang="pt" title={t.meta.title} description={t.meta.description}>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">{t.overline}</p>
+        <h1>{t.heading}</h1>
+        <p class="lede">{t.lede}</p>
+      </div>
+
+      <ServiceCards cards={t.cards} />
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Construamos juntos uma IA fiável"
+    text="Conta-nos o problema clínico ou de investigação e responder-te-emos com uma proposta de colaboração."
+  />
+</BaseLayout>

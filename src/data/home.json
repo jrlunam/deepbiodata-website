@@ -1,0 +1,662 @@
+{
+  "en": {
+    "meta": {
+      "title": "Causal AI and Explainable Intelligence for Clinical Research",
+      "description": "Deep Bio Data makes clinical AI accurate, interpretable and scientifically trustworthy for hospitals: bias analysis, causal inference, white-box modeling."
+    },
+    "hero": {
+      "overline": "Biomedical AI · Causal Inference · Bias Control",
+      "heading": "Advancing clinical research through causal AI, bias control, and explainable intelligence.",
+      "lede": "Deep Bio Data partners with hospitals, clinical research groups and biomedical institutions to make AI systems not only accurate, but scientifically trustworthy, interpretable and clinically meaningful.",
+      "primaryCta": {
+        "label": "Collaborate with us",
+        "href": "/en/contact"
+      },
+      "secondaryCta": {
+        "label": "See our credentials",
+        "href": "/en/works"
+      },
+      "figure": {
+        "ariaLabel": "Causal graph of clinical variables",
+        "labelBiomarkers": "Biomarkers",
+        "labelImaging": "Imaging",
+        "labelMobility": "Mobility",
+        "labelDemographics": "Demographics",
+        "labelCenter1": "Causal",
+        "labelCenter2": "Model",
+        "labelRisk": "Risk score",
+        "labelOutcome": "Outcome",
+        "image": "",
+        "imageAlt": ""
+      }
+    },
+    "mission": {
+      "overline": "Our mission",
+      "heading": "AI that science can trust",
+      "paragraphs": [
+        "Deep Bio Data is a research-driven technology initiative focused on improving the reliability, transparency and predictive power of modern clinical data analysis.",
+        "We address one of the major challenges in contemporary healthcare analytics: ensuring that advanced AI is not only accurate, but scientifically trustworthy, interpretable and clinically meaningful.",
+        "Our work combines causal inference, predictive modelling, explainability and clinical expertise, so that every result can be traced back to a method, a dataset and a clinical rationale."
+      ],
+      "quote": "\"Prediction alone is not enough. Clinical AI must be understood, validated and trusted before it can change a decision.\""
+    },
+    "services": {
+      "overline": "What we do",
+      "heading": "Six disciplines, one goal: reliable biomedical AI",
+      "cards": [
+        {
+          "title": "Bias: types and methodologies",
+          "text": "Bias is not a single defect but a family of distortions that can arise at different stages of the data lifecycle. We identify and characterise their sources before selecting appropriate mitigation strategies."
+        },
+        {
+          "title": "Causal inference: association, estimation and causal ML",
+          "text": "Three questions that are often confused: what is associated, what would happen under an intervention, and how causal effects differ across individuals or populations. We use causal inference and machine learning to investigate all three."
+        },
+        {
+          "title": "Predictive AI: longitudinal and multimodal models",
+          "text": "Clinical reality is a trajectory, not just a snapshot. We model how health evolves over time and integrate complementary sources of evidence, including imaging, omics, clinical records and other biomedical data."
+        },
+        {
+          "title": "Explainability and white-box AI",
+          "text": "A prediction that cannot be inspected is difficult to understand or scientifically defend. We investigate how models reach their predictions, analyse their internal representations and develop more interpretable alternatives."
+        },
+        {
+          "title": "Trustworthy AI: how reliability is measured",
+          "text": "Reliability is not a claim; it must be demonstrated through evidence. We assess model performance, calibration, robustness, fairness, uncertainty and generalisation throughout development and validation."
+        },
+        {
+          "title": "Clinical knowledge integration",
+          "text": "Statistical signal is not necessarily clinical meaning. We bring clinical guidelines, expert knowledge, physiological relationships and structured biomedical knowledge into model design, development and evaluation."
+        }
+      ],
+      "more": {
+        "label": "See each discipline in detail",
+        "href": "/en/services"
+      }
+    },
+    "metrics": {
+      "items": [
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": "Years of experience",
+          "sub": ""
+        },
+        {
+          "value": 10,
+          "suffix": "+",
+          "label": "International clients",
+          "sub": ""
+        },
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Sectors",
+          "sub": "Health · Banking · Public Policy"
+        }
+      ],
+      "ctaLabel": "Learn about our credentials",
+      "ctaHref": "/works"
+    },
+    "vision": {
+      "overline": "Our vision",
+      "heading": "A new generation of biomedical AI",
+      "pairs": [
+        {
+          "left": "Prediction",
+          "right": "causal understanding"
+        },
+        {
+          "left": "Performance",
+          "right": "transparency"
+        },
+        {
+          "left": "Automation",
+          "right": "scientific accountability"
+        }
+      ]
+    },
+    "collaboration": {
+      "overline": "Collaboration",
+      "heading": "We actively seek collaboration with",
+      "cards": [
+        {
+          "title": "Hospitals & clinical research units",
+          "text": "Clinical predictive systems, imaging AI and study support grounded in causal thinking."
+        },
+        {
+          "title": "Biomedical research institutes",
+          "text": "Bias control, fairness validation and white-box reconstruction of complex models."
+        },
+        {
+          "title": "Universities & academic laboratories",
+          "text": "Joint research on causal machine learning and scientific interpretability."
+        },
+        {
+          "title": "Healthcare innovation programmes",
+          "text": "Public and private programmes building the next generation of clinical AI."
+        }
+      ]
+    },
+    "ctaBand": {
+      "heading": "Let's build trustworthy AI together",
+      "text": "We collaborate with hospitals, research institutes and innovation programmes that need AI systems they can explain, validate and defend.",
+      "primaryLabel": "Collaborate with us",
+      "primaryHref": "/contact",
+      "secondaryLabel": "See our credentials",
+      "secondaryHref": "/works"
+    },
+    "servicesPage": {
+      "meta": {
+        "title": "Biomedical AI Services — Six Disciplines",
+        "description": "Six disciplines for reliable biomedical AI: bias and fairness audits, causal inference, predictive modeling, explainable white-box models and data strategy."
+      },
+      "overline": "What we do",
+      "heading": "Six disciplines, one goal: reliable biomedical AI",
+      "lede": "Each discipline combines scientific methods, measurable evaluation criteria and clinical expertise. We bring together the approaches most relevant to the objectives and challenges of each project.",
+      "cards": [
+        {
+          "title": "Bias: types and methodologies",
+          "text": "Biomedical datasets can contain different forms of bias that affect the validity, fairness and generalisability of AI models. We identify and quantify bias throughout the data lifecycle, from participant selection and data acquisition to measurement, missingness and model development. Our approach combines statistical assessment, targeted mitigation strategies and robustness evaluation.",
+          "items": [
+            "Selection and representativeness bias — inverse probability weighting (IPW), stratified resampling and recruitment audits",
+            "Measurement and information bias — misclassification correction, sensitivity analysis and audit of labelling protocols",
+            "Demographic and equity bias — subgroup metrics (demographic parity, equalised odds), fairness audits and threshold review",
+            "Historical and shortcut bias — counterfactual tests, robustness to spurious correlates and provenance review"
+          ]
+        },
+        {
+          "title": "Causal inference: association, estimation and causal ML",
+          "text": "Predictive association does not necessarily imply causation. We distinguish between identifying statistical relationships, estimating causal effects and investigating how these effects vary across individuals or populations. By combining causal inference frameworks with machine learning, we investigate complex biomedical relationships while explicitly addressing confounding and underlying assumptions.",
+          "items": [
+            "Statistical association — correlation and predictive regression describe co-variation; they do not answer what happens under an intervention",
+            "Causal estimation — DAGs and the backdoor criterion, propensity scores, IPTW, doubly robust estimators, instrumental variables and difference-in-differences",
+            "Causal machine learning — causal forests, meta-learners (T/S/X), double machine learning and heterogeneous treatment effects",
+            "Refutation — placebo tests, negative controls and sensitivity to unmeasured confounding (E-value)"
+          ]
+        },
+        {
+          "title": "Predictive AI: longitudinal and multimodal models",
+          "text": "Biomedical conditions evolve over time and are rarely explained by a single source of information. We develop predictive models that capture temporal patterns and integrate heterogeneous data, including clinical records, laboratory measurements, medical imaging, biological measurements and physiological signals. Our focus is on predictive performance, temporal consistency and generalisation across datasets.",
+          "items": [
+            "Longitudinal models — biomarker trajectories, mixed-effects models, temporal Transformers/LSTMs and survival models with time-dependent covariates",
+            "Multimodal fusion — imaging (CNN/ViT), tabular clinical data, genomics and omics, clinical text and wearable signals",
+            "Clinical outcomes — risk, progression, treatment response, readmission and complication prediction",
+            "Temporal and external validation — time-based splits and replication in independent cohorts"
+          ]
+        },
+        {
+          "title": "Explainability and white-box AI",
+          "text": "Understanding how an AI model reaches its predictions is essential for scientific interpretation and clinical assessment. We combine explainable AI techniques with deeper investigations into internal model representations and computational mechanisms. We also explore interpretable reconstructions that make complex models easier to inspect, evaluate and audit.",
+          "items": [
+            "Attribution — SHAP, Integrated Gradients and attention analysis at patient and cohort level",
+            "Imaging evidence — saliency maps that locate the regions supporting each finding",
+            "White-box reconstruction — interpretable surrogates, distillation, GAM/EBM and regularised trees",
+            "Mechanism audit — shortcut-learning detection and inspection of the features the model actually uses"
+          ]
+        },
+        {
+          "title": "Trustworthy AI: how reliability is measured",
+          "text": "Predictive accuracy alone is not sufficient to establish the reliability of an AI system. We evaluate model performance through complementary measures of discrimination, calibration, robustness, fairness, uncertainty and generalisation. We also assess reproducibility and external validity to identify limitations and determine under which conditions model predictions remain dependable.",
+          "items": [
+            "Calibration — Brier score, reliability curves and expected calibration error (ECE)",
+            "Discrimination — AUROC and AUPRC with confidence intervals, reported per subgroup",
+            "Robustness — external validation, stress tests and sensitivity to missingness and noise",
+            "Stability and equity — subgroup performance, data drift monitoring and post-deployment surveillance",
+            "Uncertainty — conformal prediction and intervals that tell the clinician when not to trust a case"
+          ]
+        },
+        {
+          "title": "Clinical knowledge integration",
+          "text": "Biomedical AI should combine patterns learned from data with established clinical and biological knowledge. We integrate expert knowledge, clinical guidelines, physiological relationships, structured terminologies and causal information into model design, development and evaluation. This helps connect statistical predictions with clinically meaningful concepts and scientifically interpretable relationships.",
+          "items": [
+            "Expert-driven design — variable definitions and DAGs built together with clinicians",
+            "Guideline constraints — regularisation and feature constraints aligned with clinical practice guidelines",
+            "Hybrid models — mechanistic and pharmacokinetic components combined with machine learning",
+            "Clinical review — case review with clinical committees and TRIPOD+AI style reporting"
+          ]
+        }
+      ]
+    }
+  },
+  "es": {
+    "meta": {
+      "title": "IA causal e inteligencia explicable para la investigación clínica",
+      "description": "Deep Bio Data hace que la IA clínica sea precisa, interpretable y científicamente fiable: análisis de sesgo, inferencia causal y modelado de caja blanca."
+    },
+    "hero": {
+      "overline": "IA biomédica · Inferencia causal · Control del sesgo",
+      "heading": "Avanzamos la investigación clínica mediante IA causal, control del sesgo e inteligencia explicable.",
+      "lede": "Deep Bio Data colabora con hospitales, grupos de investigación clínica e instituciones biomédicas para que los sistemas de IA no solo sean precisos, sino científicamente fiables, interpretables y clínicamente relevantes.",
+      "primaryCta": {
+        "label": "Colabora con nosotros",
+        "href": "/es/contact"
+      },
+      "secondaryCta": {
+        "label": "Conoce nuestra trayectoria",
+        "href": "/es/works"
+      },
+      "figure": {
+        "ariaLabel": "Grafo causal de variables clínicas",
+        "labelBiomarkers": "Biomarcadores",
+        "labelImaging": "Imagen",
+        "labelMobility": "Movilidad",
+        "labelDemographics": "Demografía",
+        "labelCenter1": "Modelo",
+        "labelCenter2": "causal",
+        "labelRisk": "Riesgo",
+        "labelOutcome": "Resultado",
+        "image": "",
+        "imageAlt": ""
+      }
+    },
+    "mission": {
+      "overline": "Nuestra misión",
+      "heading": "IA en la que la ciencia puede confiar",
+      "paragraphs": [
+        "Deep Bio Data es una iniciativa tecnológica orientada a la investigación que trabaja para mejorar la fiabilidad, la transparencia y el poder predictivo del análisis moderno de datos clínicos.",
+        "Abordamos uno de los grandes retos del análisis sanitario actual: que la IA avanzada no solo sea precisa, sino científicamente fiable, interpretable y clínicamente relevante.",
+        "Nuestro trabajo combina inferencia causal, modelado predictivo, explicabilidad y experiencia clínica, de modo que cada resultado pueda rastrearse hasta un método, un conjunto de datos y una justificación clínica."
+      ],
+      "quote": "«Predecir no basta. La IA clínica debe comprenderse, validarse y ganarse la confianza antes de poder cambiar una decisión.»"
+    },
+    "services": {
+      "overline": "Qué hacemos",
+      "heading": "Seis disciplinas, un objetivo: IA biomédica fiable",
+      "cards": [
+        {
+          "title": "Sesgos: tipos y metodologías",
+          "text": "Los conjuntos de datos biomédicos pueden contener distintas formas de sesgo que afectan a la validez, la equidad y la capacidad de generalización de los modelos de IA. Identificamos y caracterizamos sus fuentes antes de seleccionar estrategias de mitigación adecuadas."
+        },
+        {
+          "title": "Inferencia causal: asociación, estimación y ML causal",
+          "text": "Tres preguntas que a menudo se confunden: qué está asociado, qué ocurriría bajo una intervención y cómo varían los efectos causales entre individuos o poblaciones. Combinamos inferencia causal y aprendizaje automático para investigar las tres."
+        },
+        {
+          "title": "IA predictiva: modelos longitudinales y multimodales",
+          "text": "La realidad clínica es una trayectoria, no solo una instantánea. Modelamos cómo evoluciona la salud a lo largo del tiempo e integramos fuentes de evidencia complementarias, como imágenes, ómicas, historias clínicas y otros datos biomédicos."
+        },
+        {
+          "title": "Explicabilidad e IA de caja blanca",
+          "text": "Una predicción que no se puede inspeccionar es difícil de comprender o defender científicamente. Investigamos cómo llegan los modelos a sus predicciones, analizamos sus representaciones internas y desarrollamos alternativas más interpretables."
+        },
+        {
+          "title": "IA fiable: cómo se mide la fiabilidad",
+          "text": "La fiabilidad no se afirma: debe demostrarse con evidencia. Evaluamos el rendimiento, la calibración, la robustez, la equidad, la incertidumbre y la capacidad de generalización de los modelos durante su desarrollo y validación."
+        },
+        {
+          "title": "Integración del conocimiento clínico",
+          "text": "La señal estadística no siempre equivale a significado clínico. Incorporamos guías clínicas, conocimiento experto, relaciones fisiológicas y conocimiento biomédico estructurado al diseño, desarrollo y evaluación de los modelos."
+        }
+      ],
+      "more": {
+        "label": "Ver el detalle de cada disciplina",
+        "href": "/es/services"
+      }
+    },
+    "metrics": {
+      "items": [
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": "Años de experiencia",
+          "sub": ""
+        },
+        {
+          "value": 10,
+          "suffix": "+",
+          "label": "Clientes internacionales",
+          "sub": ""
+        },
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Sectores",
+          "sub": "Salud · Banca · Políticas Públicas"
+        }
+      ],
+      "ctaLabel": "Conoce nuestra trayectoria",
+      "ctaHref": "/es/works"
+    },
+    "vision": {
+      "overline": "Nuestra visión",
+      "heading": "El futuro de la IA clínica exige un equilibrio entre",
+      "pairs": [
+        {
+          "left": "Predicción",
+          "right": "comprensión causal"
+        },
+        {
+          "left": "Rendimiento",
+          "right": "transparencia"
+        },
+        {
+          "left": "Automatización",
+          "right": "responsabilidad científica"
+        }
+      ]
+    },
+    "collaboration": {
+      "overline": "Colaboración",
+      "heading": "Buscamos activamente colaborar con",
+      "cards": [
+        {
+          "title": "Hospitales y unidades de investigación clínica",
+          "text": "Sistemas predictivos clínicos, IA de imagen y apoyo a estudios basados en pensamiento causal."
+        },
+        {
+          "title": "Institutos de investigación biomédica",
+          "text": "Control del sesgo, validación de equidad y reconstrucción de caja blanca de modelos complejos."
+        },
+        {
+          "title": "Universidades y laboratorios académicos",
+          "text": "Investigación conjunta en aprendizaje automático causal e interpretabilidad científica."
+        },
+        {
+          "title": "Programas de innovación sanitaria",
+          "text": "Programas públicos y privados que construyen la próxima generación de IA clínica."
+        }
+      ]
+    },
+    "ctaBand": {
+      "heading": "Construyamos juntos una IA fiable",
+      "text": "Colaboramos con hospitales, institutos de investigación y programas de innovación que necesitan sistemas de IA que puedan explicar, validar y defender.",
+      "primaryLabel": "Colabora con nosotros",
+      "primaryHref": "/es/contact",
+      "secondaryLabel": "Conoce nuestra trayectoria",
+      "secondaryHref": "/es/works"
+    },
+    "servicesPage": {
+      "meta": {
+        "title": "Servicios de IA biomédica — Seis disciplinas",
+        "description": "Seis disciplinas para una IA biomédica fiable: auditoría de sesgo e equidad, inferencia causal, modelado predictivo, IA explicable de caja blanca y estrategia de datos."
+      },
+      "overline": "Qué hacemos",
+      "heading": "Seis disciplinas, un objetivo: IA biomédica fiable",
+      "lede": "Cada disciplina combina métodos científicos, criterios de evaluación medibles y experiencia clínica. Reunimos los enfoques más relevantes para los objetivos y retos de cada proyecto.",
+      "cards": [
+        {
+          "title": "Sesgos: tipos y metodologías",
+          "text": "Los conjuntos de datos biomédicos pueden contener distintas formas de sesgo que afectan a la validez, la equidad y la capacidad de generalización de los modelos de IA. Identificamos y cuantificamos el sesgo a lo largo de todo el ciclo de vida del dato: desde la selección de participantes y la adquisición de datos hasta la medición, los datos ausentes y el desarrollo del modelo. Nuestro enfoque combina evaluación estadística, estrategias de mitigación específicas y análisis de robustez.",
+          "items": [
+            "Sesgo de selección y representatividad: ponderación por probabilidad inversa (IPW), remuestreo estratificado y auditoría del reclutamiento",
+            "Sesgo de medición e información: corrección de error de clasificación, análisis de sensibilidad y auditoría de los protocolos de etiquetado",
+            "Sesgo demográfico y de equidad: métricas por subgrupo (paridad demográfica, equalised odds), auditorías de equidad y revisión de umbrales",
+            "Sesgo histórico y de atajo: pruebas contrafactuales, robustez frente a correlatos espurios y revisión de la procedencia del dato"
+          ]
+        },
+        {
+          "title": "Inferencia causal: asociación, estimación y ML causal",
+          "text": "La asociación predictiva no implica necesariamente causalidad. Distinguimos entre identificar relaciones estadísticas, estimar efectos causales e investigar cómo varían estos efectos entre individuos o poblaciones. Al combinar marcos de inferencia causal con aprendizaje automático, analizamos relaciones biomédicas complejas y abordamos explícitamente la confusión y los supuestos subyacentes.",
+          "items": [
+            "Asociación estadística: la correlación y la regresión predictiva describen covariación; no responden a qué ocurre bajo una intervención",
+            "Estimación causal: DAG y criterio backdoor, scores de propensión, IPTW, estimadores doblemente robustos, variables instrumentales y diferencias en diferencias",
+            "Machine learning causal: bosques causales, meta-aprendices (T/S/X), double machine learning y efectos heterogéneos del tratamiento",
+            "Refutación: pruebas placebo, controles negativos y sensibilidad a confusores no observados (valor E)"
+          ]
+        },
+        {
+          "title": "IA predictiva: modelos longitudinales y multimodales",
+          "text": "Las condiciones biomédicas evolucionan con el tiempo y rara vez se explican a partir de una única fuente de información. Desarrollamos modelos predictivos que capturan patrones temporales e integran datos heterogéneos, como historias clínicas, mediciones de laboratorio, imágenes médicas, mediciones biológicas y señales fisiológicas. Nos centramos en el rendimiento predictivo, la consistencia temporal y la generalización entre conjuntos de datos.",
+          "items": [
+            "Modelos longitudinales: trayectorias de biomarcadores, modelos de efectos mixtos, Transformers/LSTM temporales y supervivencia con covariables dependientes del tiempo",
+            "Fusión multimodal: imagen (CNN/ViT), datos clínicos tabulares, genómica y ómicas, texto clínico y señales de wearables",
+            "Desenlaces clínicos: riesgo, progresión, respuesta al tratamiento, reingreso y complicaciones",
+            "Validación temporal y externa: particiones por tiempo y replicación en cohortes independientes"
+          ]
+        },
+        {
+          "title": "Explicabilidad e IA de caja blanca",
+          "text": "Comprender cómo llega un modelo de IA a sus predicciones es esencial para su interpretación científica y evaluación clínica. Combinamos técnicas de IA explicable con investigaciones más profundas de las representaciones internas y los mecanismos computacionales del modelo. También exploramos reconstrucciones interpretables que facilitan la inspección, evaluación y auditoría de modelos complejos.",
+          "items": [
+            "Atribución: SHAP, Integrated Gradients y análisis de atención a nivel de paciente y de cohorte",
+            "Evidencia en imagen: mapas de saliencia que localizan las regiones que sostienen cada hallazgo",
+            "Reconstrucción de caja blanca: sustitutos interpretables, destilación, GAM/EBM y árboles regularizados",
+            "Auditoría de mecanismos: detección de shortcut learning e inspección de las variables que el modelo usa realmente"
+          ]
+        },
+        {
+          "title": "IA fiable: cómo se mide la fiabilidad",
+          "text": "La precisión predictiva por sí sola no basta para establecer la fiabilidad de un sistema de IA. Evaluamos el rendimiento del modelo con medidas complementarias de discriminación, calibración, robustez, equidad, incertidumbre y generalización. También analizamos la reproducibilidad y la validez externa para identificar limitaciones y determinar en qué condiciones siguen siendo fiables sus predicciones.",
+          "items": [
+            "Calibración: Brier score, curvas de fiabilidad y error de calibración esperado (ECE)",
+            "Discriminación: AUROC y AUPRC con intervalos de confianza, reportadas por subgrupo",
+            "Robustez: validación externa, pruebas de estrés y sensibilidad a valores ausentes y ruido",
+            "Estabilidad y equidad: rendimiento por subgrupo, monitorización de deriva (drift) y vigilancia post-despliegue",
+            "Incertidumbre: predicción conforme e intervalos que indican al clínico cuándo no debe confiar en un caso"
+          ]
+        },
+        {
+          "title": "Integración del conocimiento clínico",
+          "text": "La IA biomédica debe combinar los patrones aprendidos de los datos con el conocimiento clínico y biológico establecido. Integramos conocimiento experto, guías clínicas, relaciones fisiológicas, terminologías estructuradas e información causal en el diseño, desarrollo y evaluación de los modelos. Así conectamos las predicciones estadísticas con conceptos clínicamente relevantes y relaciones interpretables desde el punto de vista científico.",
+          "items": [
+            "Diseño con expertos: definición de variables y DAG construidos junto con clínicos",
+            "Restricciones basadas en guías: regularización y restricciones de variables alineadas con guías de práctica clínica",
+            "Modelos híbridos: componentes mecanicistas y farmacocinéticos combinados con machine learning",
+            "Revisión clínica: revisión de casos con comités clínicos y reporte estilo TRIPOD+AI"
+          ]
+        }
+      ]
+    }
+  },
+  "pt": {
+    "meta": {
+      "title": "IA causal e inteligência explicável para a investigação clínica",
+      "description": "A Deep Bio Data torna a IA clínica precisa, interpretável e cientificamente fiável: análise de enviesamento, inferência causal e modelação de caixa branca."
+    },
+    "hero": {
+      "overline": "IA biomédica · Inferência causal · Controlo do enviesamento",
+      "heading": "Fazemos avançar a investigação clínica com IA causal, controlo do enviesamento e inteligência explicável.",
+      "lede": "A Deep Bio Data colabora com hospitais, grupos de investigação clínica e instituições biomédicas para que os sistemas de IA não sejam apenas precisos, mas cientificamente fiáveis, interpretáveis e clinicamente relevantes.",
+      "primaryCta": {
+        "label": "Colabore connosco",
+        "href": "/pt/contact"
+      },
+      "secondaryCta": {
+        "label": "Conheça o nosso percurso",
+        "href": "/pt/works"
+      },
+      "figure": {
+        "ariaLabel": "Grafo causal de variáveis clínicas",
+        "labelBiomarkers": "Biomarcadores",
+        "labelImaging": "Imagem",
+        "labelMobility": "Mobilidade",
+        "labelDemographics": "Demografia",
+        "labelCenter1": "Modelo",
+        "labelCenter2": "causal",
+        "labelRisk": "Risco",
+        "labelOutcome": "Resultado",
+        "image": "",
+        "imageAlt": ""
+      }
+    },
+    "mission": {
+      "overline": "A nossa missão",
+      "heading": "IA em que a ciência pode confiar",
+      "paragraphs": [
+        "A Deep Bio Data é uma iniciativa tecnológica orientada para a investigação que trabalha para melhorar a fiabilidade, a transparência e o poder preditivo da análise moderna de dados clínicos.",
+        "Abordamos um dos grandes desafios da análise de saúde atual: garantir que a IA avançada não é apenas precisa, mas cientificamente fiável, interpretável e clinicamente relevante.",
+        "O nosso trabalho combina inferência causal, modelação preditiva, explicabilidade e experiência clínica, para que cada resultado possa ser rastreado até um método, um conjunto de dados e uma justificação clínica."
+      ],
+      "quote": "«Prever não basta. A IA clínica tem de ser compreendida, validada e merecer confiança antes de poder mudar uma decisão.»"
+    },
+    "services": {
+      "overline": "O que fazemos",
+      "heading": "Seis disciplinas, um objetivo: IA biomédica fiável",
+      "cards": [
+        {
+          "title": "Enviesamento: tipos e metodologias",
+          "text": "Os conjuntos de dados biomédicos podem conter diferentes formas de enviesamento que afetam a validade, a equidade e a capacidade de generalização dos modelos de IA. Identificamos e caracterizamos as suas fontes antes de selecionar estratégias de mitigação adequadas."
+        },
+        {
+          "title": "Inferência causal: associação, estimação e ML causal",
+          "text": "Três questões frequentemente confundidas: o que está associado, o que aconteceria perante uma intervenção e como os efeitos causais diferem entre indivíduos ou populações. Combinamos inferência causal e aprendizagem automática para investigar as três."
+        },
+        {
+          "title": "IA preditiva: modelos longitudinais e multimodais",
+          "text": "A realidade clínica é uma trajetória, não apenas uma fotografia instantânea. Modelamos a evolução da saúde ao longo do tempo e integramos fontes de evidência complementares, incluindo imagens, ómicas, registos clínicos e outros dados biomédicos."
+        },
+        {
+          "title": "Explicabilidade e IA de caixa branca",
+          "text": "Uma previsão que não pode ser inspecionada é difícil de compreender ou defender cientificamente. Investigamos como os modelos chegam às suas previsões, analisamos as suas representações internas e desenvolvemos alternativas mais interpretáveis."
+        },
+        {
+          "title": "IA fiável: como se mede a fiabilidade",
+          "text": "A fiabilidade não é uma afirmação: tem de ser demonstrada através de evidência. Avaliamos o desempenho, a calibração, a robustez, a equidade, a incerteza e a capacidade de generalização dos modelos ao longo do desenvolvimento e da validação."
+        },
+        {
+          "title": "Integração do conhecimento clínico",
+          "text": "O sinal estatístico não corresponde necessariamente a significado clínico. Integramos diretrizes clínicas, conhecimento especializado, relações fisiológicas e conhecimento biomédico estruturado no desenho, desenvolvimento e avaliação dos modelos."
+        }
+      ],
+      "more": {
+        "label": "Ver o detalhe de cada disciplina",
+        "href": "/pt/services"
+      }
+    },
+    "metrics": {
+      "items": [
+        {
+          "value": 20,
+          "suffix": "+",
+          "label": "Anos de experiência",
+          "sub": ""
+        },
+        {
+          "value": 10,
+          "suffix": "+",
+          "label": "Clientes internacionais",
+          "sub": ""
+        },
+        {
+          "value": 3,
+          "suffix": "",
+          "label": "Setores",
+          "sub": "Saúde · Banca · Políticas Públicas"
+        }
+      ],
+      "ctaLabel": "Conheça o nosso percurso",
+      "ctaHref": "/pt/works"
+    },
+    "vision": {
+      "overline": "A nossa visão",
+      "heading": "O futuro da IA clínica exige um equilíbrio entre",
+      "pairs": [
+        {
+          "left": "Previsão",
+          "right": "compreensão causal"
+        },
+        {
+          "left": "Desempenho",
+          "right": "transparência"
+        },
+        {
+          "left": "Automação",
+          "right": "responsabilidade científica"
+        }
+      ]
+    },
+    "collaboration": {
+      "overline": "Colaboração",
+      "heading": "Procuramos ativamente colaborar com",
+      "cards": [
+        {
+          "title": "Hospitais e unidades de investigação clínica",
+          "text": "Sistemas preditivos clínicos, IA de imagem e apoio a estudos baseados em pensamento causal."
+        },
+        {
+          "title": "Institutos de investigação biomédica",
+          "text": "Controlo do enviesamento, validação de equidade e reconstrução de caixa branca de modelos complexos."
+        },
+        {
+          "title": "Universidades e laboratórios académicos",
+          "text": "Investigação conjunta em aprendizagem automática causal e interpretabilidade científica."
+        },
+        {
+          "title": "Programas de inovação em saúde",
+          "text": "Programas públicos e privados que constroem a próxima geração de IA clínica."
+        }
+      ]
+    },
+    "ctaBand": {
+      "heading": "Construamos juntos uma IA fiável",
+      "text": "Colaboramos com hospitais, institutos de investigação e programas de inovação que precisam de sistemas de IA que possam explicar, validar e defender.",
+      "primaryLabel": "Colabore connosco",
+      "primaryHref": "/pt/contact",
+      "secondaryLabel": "Conheça o nosso percurso",
+      "secondaryHref": "/pt/works"
+    },
+    "servicesPage": {
+      "meta": {
+        "title": "Serviços de IA biomédica — Seis disciplinas",
+        "description": "Seis disciplinas para uma IA biomédica fiável: auditoria de enviesamento e equidade, inferência causal, modelação preditiva e IA explicável de caixa branca."
+      },
+      "overline": "O que fazemos",
+      "heading": "Seis disciplinas, um objetivo: IA biomédica fiável",
+      "lede": "Cada disciplina combina métodos científicos, critérios de avaliação mensuráveis e conhecimento clínico. Reunimos as abordagens mais relevantes para os objetivos e desafios de cada projeto.",
+      "cards": [
+        {
+          "title": "Enviesamento: tipos e metodologias",
+          "text": "Os conjuntos de dados biomédicos podem conter diferentes formas de enviesamento que afetam a validade, a equidade e a capacidade de generalização dos modelos de IA. Identificamos e quantificamos o enviesamento ao longo de todo o ciclo de vida dos dados, desde a seleção dos participantes e a aquisição dos dados até à medição, aos dados em falta e ao desenvolvimento do modelo. A nossa abordagem combina avaliação estatística, estratégias de mitigação direcionadas e avaliação da robustez.",
+          "items": [
+            "Enviesamento de seleção e representatividade — ponderação pelo inverso da probabilidade (IPW), reamostragem estratificada e auditoria do recrutamento",
+            "Enviesamento de medição e informação — correção de erro de classificação, análise de sensibilidade e auditoria dos protocolos de rotulagem",
+            "Enviesamento demográfico e de equidade — métricas por subgrupo (paridade demográfica, equalised odds), auditorias de equidade e revisão de limiares",
+            "Enviesamento histórico e de atalho — testes contrafactuais, robustez a correlatos espúrios e revisão da proveniência do dado"
+          ]
+        },
+        {
+          "title": "Inferência causal: associação, estimação e ML causal",
+          "text": "A associação preditiva não implica necessariamente causalidade. Distinguimos entre identificar relações estatísticas, estimar efeitos causais e investigar como estes efeitos variam entre indivíduos ou populações. Combinando enquadramentos de inferência causal com aprendizagem automática, investigamos relações biomédicas complexas, abordando explicitamente o confundimento e os pressupostos subjacentes.",
+          "items": [
+            "Associação estatística — a correlação e a regressão preditiva descrevem covariância; não respondem ao que acontece sob uma intervenção",
+            "Estimação causal — DAG e critério backdoor, propensity scores, IPTW, estimadores duplamente robustos, variáveis instrumentais e diferenças em diferenças",
+            "Machine learning causal — causal forests, meta-aprendizes (T/S/X), double machine learning e efeitos heterogéneos do tratamento",
+            "Refutação — testes placebo, controlos negativos e sensibilidade a confundidores não observados (valor E)"
+          ]
+        },
+        {
+          "title": "IA preditiva: modelos longitudinais e multimodais",
+          "text": "As condições biomédicas evoluem ao longo do tempo e raramente são explicadas por uma única fonte de informação. Desenvolvemos modelos preditivos que captam padrões temporais e integram dados heterogéneos, incluindo registos clínicos, medições laboratoriais, imagiologia médica, medições biológicas e sinais fisiológicos. O nosso foco está no desempenho preditivo, na consistência temporal e na generalização entre conjuntos de dados.",
+          "items": [
+            "Modelos longitudinais — trajetórias de biomarcadores, modelos de efeitos mistos, Transformers/LSTM temporais e sobrevivência com covariáveis dependentes do tempo",
+            "Fusão multimodal — imagem (CNN/ViT), dados clínicos tabulares, genómica e ómicas, texto clínico e sinais de wearables",
+            "Desfechos clínicos — risco, progressão, resposta ao tratamento, reinternamento e complicações",
+            "Validação temporal e externa — partições por tempo e replicação em coortes independentes"
+          ]
+        },
+        {
+          "title": "Explicabilidade e IA de caixa branca",
+          "text": "Compreender como um modelo de IA chega às suas previsões é essencial para a interpretação científica e a avaliação clínica. Combinamos técnicas de IA explicável com investigações mais aprofundadas das representações internas e dos mecanismos computacionais do modelo. Exploramos também reconstruções interpretáveis que tornam os modelos complexos mais fáceis de inspecionar, avaliar e auditar.",
+          "items": [
+            "Atribuição — SHAP, Integrated Gradients e análise de atenção ao nível do doente e da coorte",
+            "Evidência em imagem — mapas de saliência que localizam as regiões que sustentam cada achado",
+            "Reconstrução de caixa branca — substitutos interpretáveis, destilação, GAM/EBM e árvores regularizadas",
+            "Auditoria de mecanismos — deteção de shortcut learning e inspeção das variáveis que o modelo usa realmente"
+          ]
+        },
+        {
+          "title": "IA fiável: como se mede a fiabilidade",
+          "text": "A precisão preditiva, por si só, não é suficiente para estabelecer a fiabilidade de um sistema de IA. Avaliamos o desempenho do modelo através de medidas complementares de discriminação, calibração, robustez, equidade, incerteza e generalização. Avaliamos também a reprodutibilidade e a validade externa para identificar limitações e determinar em que condições as previsões do modelo continuam a ser fiáveis.",
+          "items": [
+            "Calibração — Brier score, curvas de fiabilidade e erro de calibração esperado (ECE)",
+            "Discriminação — AUROC e AUPRC com intervalos de confiança, reportadas por subgrupo",
+            "Robustez — validação externa, testes de stress e sensibilidade a valores em falta e ruído",
+            "Estabilidade e equidade — desempenho por subgrupo, monitorização de deriva (drift) e vigilância pós-implementação",
+            "Incerteza — predição conforme e intervalos que indicam ao clínico quando não deve confiar num caso"
+          ]
+        },
+        {
+          "title": "Integração do conhecimento clínico",
+          "text": "A IA biomédica deve combinar padrões aprendidos a partir dos dados com conhecimento clínico e biológico estabelecido. Integramos conhecimento especializado, diretrizes clínicas, relações fisiológicas, terminologias estruturadas e informação causal no desenho, desenvolvimento e avaliação dos modelos. Isto ajuda a ligar previsões estatísticas a conceitos clinicamente relevantes e a relações cientificamente interpretáveis.",
+          "items": [
+            "Desenho com especialistas — definição de variáveis e DAG construídos em conjunto com clínicos",
+            "Restrições baseadas em diretrizes — regularização e restrições de variáveis alinhadas com diretrizes de prática clínica",
+            "Modelos híbridos — componentes mecanicistas e farmacocinéticos combinados com machine learning",
+            "Revisão clínica — revisão de casos com comités clínicos e reporte no estilo TRIPOD+AI"
+          ]
+        }
+      ]
+    }
+  }
+}

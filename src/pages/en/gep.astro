@@ -1,0 +1,138 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+
+const priorities = [
+  {
+    title: 'Equal opportunities and career development',
+    body: [
+      'We promote fair and transparent recruitment, professional development, remuneration and career progression based on relevant qualifications, skills, responsibilities and performance.',
+      'We aim to ensure that everyone has equal opportunities to contribute, develop professionally and fulfil their potential.',
+    ],
+  },
+  {
+    title: 'Gender balance in leadership',
+    body: [
+      'We encourage equal opportunities to participate in management, project leadership and organisational decision-making.',
+      'We recognise the value of diverse perspectives in strengthening collaboration, improving decision-making and supporting innovation.',
+    ],
+  },
+  {
+    title: 'Work-life balance and an inclusive culture',
+    body: [
+      'We seek to foster a respectful working environment that supports work-life balance, recognises individual circumstances and promotes equal participation.',
+      'We are committed to creating a culture in which people are treated with dignity and respect and can balance professional responsibilities with personal and family commitments.',
+    ],
+  },
+  {
+    title: 'Prevention of discrimination and harassment',
+    body: [
+      'We are committed to maintaining a workplace free from discrimination, bullying, sexual harassment and other forms of inappropriate conduct.',
+      'We aim to ensure that concerns can be raised through appropriate channels and handled fairly, sensitively and confidentially, in accordance with applicable legal requirements.',
+    ],
+  },
+  {
+    title: 'Gender equality in research and innovation',
+    body: [
+      'As a company involved in data-driven research and innovation, we recognise the importance of considering sex- and gender-related factors where scientifically relevant.',
+      'In research concerning women’s health and pregnancy, this includes attention to relevant biological and clinical characteristics, data representativeness, potential bias in artificial intelligence (AI) systems and the responsible interpretation of research findings.',
+      'We aim to promote scientifically rigorous and responsible research that considers the needs of relevant populations and the limitations of the data and methods used.',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Gender Equality Plan 2026–2029"
+  description="Deep Bio Data’s Gender Equality Plan establishes a framework for equal opportunities, fair recruitment, balanced leadership and responsible research and innovation."
+>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">Gender Equality Plan</p>
+        <h1>Our commitment to equality, inclusion and responsible innovation</h1>
+        <p class="lede">
+          At Deep Bio Data we are committed to promoting equal opportunities, respect and
+          inclusion across our organisation and research activities. We believe that a fair
+          and inclusive working environment supports scientific excellence, responsible
+          innovation and the development of technologies that respond to real-world needs.
+        </p>
+      </div>
+
+      <div class="reveal">
+        <p>
+          Our Gender Equality Plan (GEP) establishes a framework for promoting equal
+          opportunities, supporting fair recruitment and career development, encouraging
+          balanced representation in leadership and preventing discrimination and harassment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">Our priorities</p>
+        <h2>Five key areas</h2>
+      </div>
+
+      <div>
+        {
+          priorities.map((p, i) => (
+            <details>
+              <summary>
+                <span class="num">{String(i + 1).padStart(2, '0')}</span>
+                {p.title}
+              </summary>
+              <div class="details-body">
+                {p.body.map((paragraph) => (
+                  <p>{paragraph}</p>
+                ))}
+              </div>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Implementation and accountability</h2>
+      </div>
+      <div class="reveal">
+        <p>
+          Our Gender Equality Plan establishes responsibilities, implementation measures,
+          monitoring indicators and periodic management reviews.
+        </p>
+        <p style="margin-top: var(--space-3);">
+          Through appropriate training, regular assessment and continuous improvement, we aim
+          to strengthen equality and inclusion across our organisation and research
+          activities. We will review our practices as the company grows, adapting our actions
+          to our organisational needs and the requirements applicable to our activities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--warm">
+    <div class="container cta-band">
+      <div class="reveal">
+        <p class="overline">2026–2029</p>
+        <h2>Our Gender Equality Plan 2026–2029</h2>
+        <p class="lede" style="margin-inline:auto;">
+          We believe that gender equality requires clear commitments, practical action and
+          ongoing evaluation. Our full plan describes our objectives, responsibilities,
+          implementation measures, monitoring indicators and review arrangements in greater
+          detail.
+        </p>
+        <a class="btn btn--primary" href="/assets/gep-2026-2029.pdf" download>
+          Download the Gender Equality Plan (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</BaseLayout>

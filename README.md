@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Deep Bio Data — Sitio web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sitio trilingüe (en/es/pt) de Deep Bio Data: IA biomédica (análisis de sesgo, inferencia causal, IA explicable). **Astro 5** con salida estática + endpoint de contacto Node (`@astrojs/node` standalone), listo para cualquier servidor Linux con nginx.
 
-## Available Scripts
+## Arranque rápido
 
-In the project directory, you can run:
+```bash
+npm install
+npm run dev          # desarrollo en http://localhost:4321
+npm run build        # build de producción en ./dist (client + server)
+npm run preview      # sirve el build (las 404 por idioma hay que abrirlas por URL directa)
+npm run screenshots  # QA visual: capturas + informe de overflow (necesita preview activo)
+```
 
-### `npm start`
+Requisitos: Node 20+ (probado con Node 26). Playwright usa el canal `chrome` (Chrome/Edge instalado).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Estructura
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+src/
+  styles/global.css      ← Tokens del design system + componentes
+  layouts/BaseLayout.astro
+  components/            ← Header, Footer, CtaBand, ServiceCards
+  data/home.json         ← Contenido de la home y servicios (bloques en/es/pt)
+  pages/
+    en/ es/ pt/          ← Los tres idiomas viven bajo prefijo propio (33 páginas)
+    api/contact.ts       ← Endpoint del formulario (Node + nodemailer)
+  assets/
+deploy/
+  nginx.conf             ← Redirects, 404 por idioma, cabeceras y cache
+  deepbiodata.service    ← Unidad systemd
+  .env.example           ← Plantilla de variables (SMTP, puerto, etc.)
+netlify.toml             ← Solo si se desplegara en Netlify (en servidor Linux se ignora)
+```
 
-### `npm test`
+## Formulario de contacto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sin dependencias externas (ni Netlify Forms ni servicios de terceros):
 
-### `npm run build`
+- Los tres formularios (en/es/pt) envían por AJAX un JSON a **`/api/contact`**.
+- El servidor **revalida todo** (espejo de la validación cliente), comprueba el honeypot (`bot-field`), el origen (`Origin`), el tamaño del payload y aplica un **límite de 5 envíos/hora por IP** (429).
+- El email se envía por **SMTP con nodemailer** usando las variables `SMTP_*`; el buzón destino es `CONTACT_TO`.
+- Si SMTP no está configurado o falla, el endpoint responde 503/502 y la página muestra un mensaje elegante remitiendo a info@deepbiodata.com — nunca se abre una aplicación de correo.
+- Para probar el circuito sin SMTP real: `SMTP_DRY_RUN=json` deja el email en el log del servidor.
+- Accesibilidad: `aria-invalid` + `aria-describedby` + `role="alert"`, foco al primer error.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Despliegue en servidor Linux
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+El `npm run build` genera `dist/client` (estáticos) y `dist/server/entry.mjs` (Node standalone que sirve los estáticos y el endpoint `/api/contact`).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Servidor: `git clone`, `npm ci`, `npm run build`.
+2. Configuración: `cp deploy/.env.example deploy/.env` y rellenar SMTP y puerto (`chmod 600 deploy/.env`).
+3. Servicio: `sudo cp deploy/deepbiodata.service /etc/systemd/system/ && sudo systemctl enable --now deepbiodata` (escucha en `127.0.0.1:4321`).
+4. Nginx: `sudo cp deploy/nginx.conf /etc/nginx/sites-available/deepbiodata.conf` y `sudo cp deploy/headers-security.conf /etc/nginx/snippets/`; enlazar en `sites-enabled`, `nginx -t` y reload. TLS con `sudo certbot --nginx`.
+5. La raíz `/` redirige a `/en/`; las URLs antiguas sin prefijo (`/contact`, `/team`…) hacen 301 a su equivalente `/en/`; cada URL inexistente bajo `/en/`, `/es/` o `/pt/` sirve la 404 localizada de ese idioma.
+6. Cabeceras de seguridad (CSP estricta, HSTS, X-Frame-Options…) van en `deploy/headers-security.conf`: cualquier script nuevo debe ser inline propio o bundle local; nada de CDNs externos.
 
-### `npm run eject`
+## Convenciones del sitio
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Tres idiomas **siempre**: toda página nueva existe en `src/pages/en/`, `src/pages/es/` y `src/pages/pt/`; el contenido de la home/servicios vive en `src/data/home.json`.
+- Conmutador de idioma con `hreflang`, scroll y foco preservados; `hreflang` + canonical + OG + JSON-LD (Organization con dirección de Lisboa) + sitemap por idioma.
+- Fuentes autoalojadas (Fraunces + Inter vía @fontsource) e imágenes WebP: sin peticiones externas.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Datos pendientes de completar por el cliente (marcados con [corchetes])
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- `[COMPANY LEGAL NAME]`, `[CIF/NIF]`, `[REGISTERED ADDRESS]`, `[CITY]` en `legal-notice` y `privacy-policy` (en y es).
+- `[HOSTING PROVIDER / EU REGION]` en la política de privacidad: rellenarlo con el proveedor del servidor Linux.
+- Validar los textos legales con un asesor jurídico antes de publicar.

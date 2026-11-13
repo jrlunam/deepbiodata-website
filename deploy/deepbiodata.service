@@ -1,0 +1,27 @@
+# Servicio systemd para el sitio (Node standalone de Astro).
+# Instalación:
+#   sudo cp deploy/deepbiodata.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now deepbiodata
+# Logs: journalctl -u deepbiodata -f
+
+[Unit]
+Description=Deep Bio Data (Astro + formulario de contacto)
+After=network.target
+
+[Service]
+Type=simple
+User=deepbio
+Group=deepbio
+WorkingDirectory=/var/www/deepbiodata
+EnvironmentFile=/var/www/deepbiodata/deploy/.env
+ExecStart=/usr/bin/node dist/server/entry.mjs
+Restart=always
+RestartSec=3
+# Endurecimiento básico
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target

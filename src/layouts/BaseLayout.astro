@@ -1,0 +1,222 @@
+---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/fraunces';
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: 'en' | 'es' | 'pt';
+  /** Activa secciones a pantalla completa con scroll-snap suave (home). */
+  snapSections?: boolean;
+  /** Excluye la página de la indexación (404). */
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = 'Deep Bio Data is a research-driven initiative improving the reliability, transparency and predictive power of clinical data analysis through causal AI and bias control.',
+  lang = 'en',
+  snapSections = false,
+  noindex = false,
+} = Astro.props;
+
+// URLs equivalentes en cada idioma (páginas espejo) para canonical + hreflang.
+// Los tres idiomas viven bajo prefijo propio; la raiz redirige a /en/.
+const currentPath = Astro.url.pathname;
+const pathNoLocale = currentPath.replace(/^\/(en|es|pt)\/?/, '/');
+// Con barra final: misma forma que el canonical y el sitemap (sin 308 previos).
+const urlFor = (locale: 'en' | 'es' | 'pt') =>
+  pathNoLocale === '/' ? `/${locale}/` : `/${locale}${pathNoLocale}`;
+const urlEn = urlFor('en');
+const urlEs = urlFor('es');
+const urlPt = urlFor('pt');
+
+const canonical = new URL(currentPath, Astro.site).href;
+const ogImage = new URL('/assets/og-default.png', Astro.site).href;
+const ogLocale = lang === 'es' ? 'es_ES' : lang === 'pt' ? 'pt_PT' : 'en_US';
+const ogAlternateLocales = (
+  lang === 'es' ? ['en_US', 'pt_PT'] : lang === 'pt' ? ['en_US', 'es_ES'] : ['es_ES', 'pt_PT']
+) as string[];
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Deep Bio Data',
+  url: Astro.site?.href,
+  logo: new URL('/assets/logo-sm.webp', Astro.site).href,
+  email: 'info@deepbiodata.com',
+  telephone: '+351965636559',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Rua Hermano Neves, Número 18, 3, Escritório 7, V6113',
+    postalCode: '1600-477',
+    addressLocality: 'Lisboa',
+    addressCountry: 'PT',
+  },
+  description:
+    'Biomedical AI consultancy: bias analysis and causal inference, predictive modeling and explainable white-box AI for hospitals and research institutions.',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    email: 'info@deepbiodata.com',
+    telephone: '+351965636559',
+    availableLanguage: ['en', 'es', 'pt'],
+  },
+};
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} · Deep Bio Data</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="alternate" hreflang="en" href={new URL(urlEn, Astro.site).href} />
+    <link rel="alternate" hreflang="es" href={new URL(urlEs, Astro.site).href} />
+    <link rel="alternate" hreflang="pt" href={new URL(urlPt, Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site).href} />
+    <meta name="theme-color" content="#0b3b5c" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Deep Bio Data" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Deep Bio Data" />
+    <meta property="og:locale" content={ogLocale} />
+    {ogAlternateLocales.map((locale) => <meta property="og:locale:alternate" content={locale} />)}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content="Deep Bio Data" />
+    {noindex && <meta name="robots" content="noindex" />}
+
+    <script type="application/ld+json" set:html={JSON.stringify(organization)} />
+    <noscript>
+      <style>
+        .reveal { opacity: 1 !important; transform: none !important; }
+      </style>
+    </noscript>
+    <ClientRouter />
+  </head>
+  <body class:list={{ 'snap-page': snapSections }}>
+    <a class="skip-link" href="#main">
+      {lang === 'es' ? 'Saltar al contenido principal' : lang === 'pt' ? 'Saltar para o conteúdo principal' : 'Skip to main content'}
+    </a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+
+    <script>
+      // Altura real del header como variable CSS (--header-h): el hero a
+      // pantalla completa y el scroll-padding la descuentan. Re-medido en
+      // cada carga y al redimensionar (el header cambia entre breakpoints).
+      const measureHeader = () => {
+        const header = document.querySelector('.site-header');
+        if (header) {
+          document.documentElement.style.setProperty('--header-h', Math.round(header.getBoundingClientRect().height) + 'px');
+        }
+      };
+      measureHeader();
+      window.addEventListener('resize', measureHeader, { passive: true });
+      document.addEventListener('astro:after-swap', measureHeader);
+
+      // Revelado al scroll, re-inicializado tras cada navegación del ClientRouter.
+      const initReveal = () => {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const revealables = document.querySelectorAll('.reveal:not([data-reveal-bound])');
+        if (prefersReduced || !('IntersectionObserver' in window)) {
+          revealables.forEach((el) => {
+            el.dataset.revealBound = '1';
+            el.classList.add('is-visible');
+          });
+          return;
+        }
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                io.unobserve(entry.target);
+              }
+            }
+          },
+          { threshold: 0.12 }
+        );
+        revealables.forEach((el) => {
+          el.dataset.revealBound = '1';
+          io.observe(el);
+        });
+      };
+      initReveal();
+      document.addEventListener('astro:page-load', initReveal);
+
+      // Cambio de idioma: conserva la posición de scroll y devuelve el foco al
+      // interruptor de idioma en lugar de llevar al usuario al inicio.
+      let langScroll: { x: number; y: number } | null = null;
+      let langTarget: string | null = null;
+      let langRegion: 'header' | 'footer' = 'header';
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+
+      const restoreLangScroll = () => {
+        if (!langScroll) return;
+        const { x: targetX, y: targetY } = langScroll;
+        // Se consume aqui para que solo haya una cadena de reintentos
+        // (after-swap y page-load podrian encadenarse).
+        langScroll = null;
+        const attempt = (n: number) => {
+          // `instant` evita que scroll-behavior:smooth deje la posicion a medias.
+          window.scrollTo({ left: targetX, top: targetY, behavior: 'instant' as ScrollBehavior });
+          window.requestAnimationFrame(() => {
+            // Fuentes, imagenes y reveal asientan el layout durante ~1s: se
+            // re-afirma la posicion hasta que se estabilice en el objetivo.
+            if (Math.abs(window.scrollY - targetY) > 2 && n < 12) {
+              window.setTimeout(() => attempt(n + 1), 150);
+              return;
+            }
+            // Devuelve el foco al conmutador del bloque (header o pie) desde
+            // el que se cambio de idioma.
+            const scope = langRegion === 'footer' ? '.site-footer' : '.site-header';
+            const toggle = langTarget
+              ? document.querySelector(`${scope} a[data-lang-switch][hreflang="${langTarget}"]`)
+              : document.querySelector(`${scope} a[data-lang-switch][aria-current="true"]`);
+            langTarget = null;
+            if (toggle) {
+              toggle.setAttribute('tabindex', '-1');
+              (toggle as HTMLElement).focus({ preventScroll: true });
+            }
+          });
+        };
+        attempt(0);
+      };
+
+      document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement | null;
+        const link = target?.closest('a[data-lang-switch]') as HTMLAnchorElement | null;
+        if (link) {
+          langScroll = { x: window.scrollX, y: window.scrollY };
+          langTarget = link.getAttribute('hreflang');
+          langRegion = link.closest('.site-footer') ? 'footer' : 'header';
+          restoreTries = 0;
+        }
+      });
+      document.addEventListener('astro:after-swap', restoreLangScroll);
+      document.addEventListener('astro:page-load', restoreLangScroll);
+    </script>
+  </body>
+</html>

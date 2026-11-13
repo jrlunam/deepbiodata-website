@@ -1,0 +1,196 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import ServiceCards from '../../components/ServiceCards.astro';
+import home from '../../data/home.json';
+
+// Contenido de la home (src/data/home.json).
+const t = home.es;
+const f = t.hero.figure;
+---
+
+<BaseLayout
+  lang="es"
+  snapSections
+  title={t.meta.title}
+  description={t.meta.description}
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <p class="overline">{t.hero.overline}</p>
+        <h1>{t.hero.heading}</h1>
+        <p class="lede">
+          {t.hero.lede}
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href={t.hero.primaryCta.href}>{t.hero.primaryCta.label}</a>
+          <a class="btn btn--secondary" href={t.hero.secondaryCta.href}>{t.hero.secondaryCta.label}</a>
+        </div>
+      </div>
+
+      <div class="hero__figure">
+        {f.image ? (
+          <img class="causal-graph-img" src={f.image} alt={f.imageAlt} width="480" height="400" loading="eager" />
+        ) : (
+          <svg class="causal-graph" viewBox="0 0 480 400" width="480" height="400" role="img" aria-label={f.ariaLabel}>
+            <path class="edge" d="M110 90 C 170 110, 210 150, 240 190" />
+            <path class="edge" d="M370 80 C 330 110, 280 150, 250 190" />
+            <path class="edge" d="M90 220 C 150 210, 190 205, 225 205" />
+            <path class="edge" d="M390 230 C 330 215, 290 210, 255 205" />
+            <path class="edge" d="M240 225 C 235 270, 225 300, 215 330" />
+            <path class="edge" d="M240 225 C 260 270, 280 305, 300 335" />
+            <circle class="node" cx="100" cy="80" r="42" />
+            <text x="100" y="84" text-anchor="middle">{f.labelBiomarkers}</text>
+            <circle class="node" cx="380" cy="70" r="38" />
+            <text x="380" y="74" text-anchor="middle">{f.labelImaging}</text>
+            <circle class="node" cx="80" cy="225" r="36" />
+            <text x="80" y="229" text-anchor="middle">{f.labelMobility}</text>
+            <circle class="node" cx="400" cy="235" r="40" />
+            <text x="400" y="239" text-anchor="middle">{f.labelDemographics}</text>
+            <circle class="node node--accent" cx="240" cy="205" r="52" />
+            <text x="240" y="202" text-anchor="middle" fill="#fff">{f.labelCenter1}</text>
+            <text x="240" y="216" text-anchor="middle" fill="#fff">{f.labelCenter2}</text>
+            <circle class="node" cx="205" cy="345" r="40" />
+            <text x="205" y="349" text-anchor="middle">{f.labelRisk}</text>
+            <circle class="node" cx="310" cy="350" r="42" />
+            <text x="310" y="354" text-anchor="middle">{f.labelOutcome}</text>
+          </svg>
+        )}
+      </div>
+    </div>
+  </section>
+
+  <!-- Misión -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="overline">{t.mission.overline}</p>
+        <h2>{t.mission.heading}</h2>
+      </div>
+      <div class="card-grid">
+        <div class="reveal">
+          {t.mission.paragraphs.map((paragraph, index) => (
+            <p style={index > 0 ? 'margin-top: var(--space-4);' : undefined}>{paragraph}</p>
+          ))}
+        </div>
+        <blockquote class="pull-quote reveal">
+          {t.mission.quote}
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qué hacemos -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="overline">{t.services.overline}</p>
+        <h2>{t.services.heading}</h2>
+      </div>
+
+      <ServiceCards cards={t.services.cards} />
+
+      <p class="section-more reveal">
+        <a class="btn btn--secondary" href={t.services.more.href}>{t.services.more.label}</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Banda de credenciales -->
+  <section class="section">
+    <div class="container">
+      <div class="metrics reveal">
+        {t.metrics.items.map((metric) => (
+          <div>
+            <div class="metrics__value" data-count={metric.value} data-suffix={metric.suffix || undefined}>{String(metric.value) + (metric.suffix || '')}</div>
+            <div class="metrics__label">{metric.label}</div>
+            {metric.sub && <div class="metrics__sub">{metric.sub}</div>}
+          </div>
+        ))}
+      </div>
+      <p class="metrics-cta reveal">
+        <a href={t.metrics.ctaHref}>{t.metrics.ctaLabel} <span aria-hidden="true">&rarr;</span></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Visión -->
+  <section class="section section--warm vision">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="overline">{t.vision.overline}</p>
+        <h2>{t.vision.heading}</h2>
+      </div>
+      <div class="vision-pairs reveal">
+        {t.vision.pairs.map((pair) => (
+          <div class="vision-pair"><span>{pair.left}</span><span class="plus">+</span><span>{pair.right}</span></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Colaboración -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="overline">{t.collaboration.overline}</p>
+        <h2>{t.collaboration.heading}</h2>
+      </div>
+      <div class="card-grid card-grid--two">
+        {t.collaboration.cards.map((card) => (
+          <article class="card reveal"><h3>{card.title}</h3><p style="color:var(--color-text-muted);">{card.text}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    heading={t.ctaBand.heading}
+    text={t.ctaBand.text}
+    primaryLabel={t.ctaBand.primaryLabel}
+    primaryHref={t.ctaBand.primaryHref}
+    secondaryLabel={t.ctaBand.secondaryLabel}
+    secondaryHref={t.ctaBand.secondaryHref}
+  />
+</BaseLayout>
+
+<script>
+  // Conteo animado de las métricas (idéntico a la versión inglesa).
+  const initCounters = () => {
+    const values = document.querySelectorAll<HTMLElement>('.metrics__value[data-count]');
+    if (!values.length || document.querySelector('[data-count-bound]')) return;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const animate = (el: HTMLElement) => {
+      const target = Number(el.dataset.count);
+      const suffix = el.dataset.suffix ?? '';
+      if (reduced || !Number.isFinite(target)) return;
+      const t0 = performance.now();
+      const duration = 1100;
+      const tick = (t: number) => {
+        const p = Math.min((t - t0) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = String(Math.round(target * eased)) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      el.textContent = '0' + suffix;
+      requestAnimationFrame(tick);
+    };
+    const first = document.querySelector('.metrics') ?? values[0];
+    first.setAttribute('data-count-bound', '1');
+    if (!('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          values.forEach(animate);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    io.observe(first);
+  };
+  initCounters();
+  document.addEventListener('astro:page-load', initCounters);
+</script>

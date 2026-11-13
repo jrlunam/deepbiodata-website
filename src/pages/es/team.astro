@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { Image } from 'astro:assets';
+import stella from '../../assets/team-stella.jpeg';
+import ramon from '../../assets/team-ramon.jpeg';
+
+const people = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Stella Luna',
+    jobTitle: 'Chief Executive Officer',
+    url: new URL('/es/team', Astro.site).href,
+    worksFor: { '@type': 'Organization', name: 'Deep Bio Data' },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidad Autónoma de Madrid' },
+    sameAs: ['https://linkedin.com/in/stella-luna'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Jose Ramon Luna',
+    jobTitle: 'Chief Data Officer',
+    url: new URL('/es/team', Astro.site).href,
+    worksFor: { '@type': 'Organization', name: 'Deep Bio Data' },
+    alumniOf: [
+      { '@type': 'CollegeOrUniversity', name: 'Universidad Autónoma de Madrid' },
+      { '@type': 'CollegeOrUniversity', name: 'MEFF Institute' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  lang="es"
+  title="Nuestro equipo"
+  description="Deep Bio Data reúne más de 20 años de experiencia en ciencia de datos, análisis clínico, machine learning, inferencia causal e IA explicable."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(people)} />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">Nuestro equipo</p>
+        <h1>Profundidad de expertise, mentalidad científica</h1>
+        <p class="lede">
+          Deep Bio Data reúne experiencia en ciencia de datos, análisis clínico, Machine
+          Learning, inferencia causal e IA explicable para impulsar la próxima generación
+          de sistemas de inteligencia biomédica fiables.
+        </p>
+      </div>
+
+      <!-- Stella Luna -->
+      <article class="profile reveal">
+        <Image
+          src={stella}
+          alt="Retrato de Stella Luna, consejera delegada de Deep Bio Data"
+          width="440"
+          height="587"
+          loading="lazy"
+          decoding="async"
+        />
+        <div>
+          <span class="profile__role">Consejera delegada (CEO)</span>
+          <h3>Stella Luna</h3>
+          <p>
+            Stella Luna es especialista sénior con más de 20 años de experiencia en
+            análisis de datos, Machine Learning y la dirección de proyectos avanzados
+            orientados a datos. Es licenciada en Matemáticas y en Físicas por la
+            Universidad Autónoma de Madrid (UAM), combinando una sólida base teórica con
+            una amplia experiencia práctica en análisis científico aplicado y
+            metodologías de IA.
+          </p>
+          <p style="margin-top: var(--space-3); color: var(--color-text-muted);">
+            A lo largo de su carrera ha dirigido y participado en proyectos
+            multidisciplinares de ciencia de datos y analítica predictiva, sistemas de
+            Machine Learning, análisis de datos biomédicos y científicos, modelado
+            estadístico avanzado e iniciativas de investigación impulsadas por IA.
+          </p>
+          <p style="margin-top: var(--space-3);">
+            Stella es además ponente habitual y colaboradora en medios e iniciativas de
+            divulgación científica relacionadas con la Ciencia de Datos, la Inteligencia
+            Artificial y el Machine Learning.
+          </p>
+          <div class="profile__links">
+            <a href="https://linkedin.com/in/stella-luna" rel="noopener">LinkedIn — Stella Luna de María</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Jose Ramon Luna -->
+      <article class="profile reveal" style="margin-top: var(--space-6);">
+        <Image
+          src={ramon}
+          alt="Retrato de Jose Ramon Luna, director de datos de Deep Bio Data"
+          width="440"
+          height="440"
+          loading="lazy"
+          decoding="async"
+        />
+        <div>
+          <span class="profile__role">Director de datos (CDO)</span>
+          <h3>Jose Ramon Luna</h3>
+          <p>
+            Jose Ramon Luna es especialista con más de 20 años de experiencia en análisis
+            de datos, Machine Learning e Inteligencia Artificial en múltiples sectores,
+            con especial foco en aplicaciones sanitarias y biomédicas. Es licenciado en
+            Físicas y en Matemáticas por la Universidad Autónoma de Madrid (UAM) y máster
+            en Gestión de Riesgos por el Instituto de Estudios Económicos (MEFF).
+          </p>
+          <p style="margin-top: var(--space-3); color: var(--color-text-muted);">
+            Su trabajo se centra en la integración de metodologías de inferencia causal,
+            detección y mitigación de sesgo estadístico, sistemas predictivos de Machine
+            Learning, deep learning e IA multimodal, marcos de caja blanca explicables y
+            modelado predictivo clínico.
+          </p>
+          <p style="margin-top: var(--space-3); color: var(--color-text-muted);">
+            Sus intereses de investigación incluyen las metodologías de score de
+            propensión, el Machine Learning causal, la interpretabilidad mecanicista, los
+            sistemas predictivos clínicos, la IA de imagen y la validación de robustez y
+            equidad.
+          </p>
+          <p style="margin-top: var(--space-3);">
+            En Deep Bio Data dirige la estrategia técnica detrás de sistemas de IA
+            clínicamente interpretables y científicamente fiables para la investigación
+            biomédica y la innovación sanitaria.
+          </p>
+          <div class="profile__links">
+            <a href="https://youtu.be/QWBmTnoMXL4" rel="noopener">
+              Entrevista — Intereconomía TV (feb. 2026): sesgo, IA y sistemas predictivos en salud
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Visión -->
+  <section class="section section--warm">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">Nuestra visión</p>
+        <h2>El futuro de la IA clínica exige un equilibrio entre</h2>
+      </div>
+      <div class="vision-pairs reveal">
+        <div class="vision-pair"><span>Rigor científico</span><span class="plus">+</span><span>rendimiento predictivo</span></div>
+        <div class="vision-pair"><span>Transparencia</span><span class="plus">+</span><span>interpretabilidad</span></div>
+        <div class="vision-pair"><span>Innovación</span><span class="plus">+</span><span>confianza clínica</span></div>
+      </div>
+      <p class="lede" style="margin-top: var(--space-6);">
+        Nuestra misión es ayudar a construir sistemas de IA que clínicos, investigadores
+        e instituciones sanitarias puedan comprender, validar e integrar con seguridad en
+        entornos biomédicos reales.
+      </p>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Trabaje con nosotros"
+    text="Estamos siempre abiertos a nuevas colaboraciones clínicas y de investigación."
+    secondaryLabel="Conoce nuestra trayectoria"
+    secondaryHref="/es/works"
+  />
+</BaseLayout>

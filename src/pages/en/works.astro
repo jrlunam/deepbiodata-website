@@ -1,0 +1,209 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { Image } from 'astro:assets';
+// TODO(imagen): covid-1 es una ilustración AI de 492x384px mejorada por reescalado.
+// Pendiente de sustituir por una captura real de covidadt.com o una versión HD.
+import covidShot from '../../assets/covid-1.png';
+---
+
+<BaseLayout
+  title="Our Credentials"
+  description="More than 20 years in IT, Data Science and AI across Health, Banking and Public Policy — including COVID-19 pandemic modeling, clinical predictive systems and medical imaging AI."
+>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">Our credentials</p>
+        <h1>Proven across industries, focused on health</h1>
+        <p class="lede">
+          We are a group of professionals with a track record of more than 20 years in IT,
+          Data Science, Machine Learning and AI. Before moving into healthcare, we worked in
+          Banking,
+          Capital Markets and Governance (Public Policy), with a background in data-backed
+          decision making and risk management built on predictive models and forecasting —
+          with more than 10 international clients who can provide referrals for our previous
+          work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Caso destacado COVID -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">Featured case &middot; Health</p>
+        <h2>COVID-19 pandemic modeling &amp; predictive intelligence</h2>
+        <p class="lede">
+          In healthcare, we developed a COVID decision-making tool with three modules: a
+          likelihood-of-death calculator based on blood biomarkers, a pneumonia predictor from
+          chest X-ray, and a geographic spread predictor for COVID transmission. Our work is
+          public at <a href="https://www.covidadt.com" rel="noopener">covidadt.com</a>.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <div class="reveal">
+          <h3>The project delivered detailed analysis of:</h3>
+          <ul style="margin-top: var(--space-3);">
+            <li>Modeling virus diffusion patterns across regions and populations</li>
+            <li>Estimating transmission dynamics under changing mobility and restriction scenarios</li>
+            <li>Predicting healthcare-system stress and hospitalization trends</li>
+            <li>Supporting early-risk assessment and outbreak forecasting</li>
+            <li>Quantifying the impact of intervention and mitigation strategies</li>
+          </ul>
+        </div>
+
+        <div class="reveal">
+          <h3>The analytical framework integrated:</h3>
+          <ul style="margin-top: var(--space-3);">
+            <li>Temporal epidemiological data</li>
+            <li>Population mobility information</li>
+            <li>Demographic and geographic variables</li>
+            <li>Clinical and hospitalization indicators</li>
+            <li>Multi-source public-health datasets</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="figure-block reveal" style="margin-top: var(--space-7); max-width: 56rem;">
+        <Image
+          src={covidShot}
+          alt="Illustration of the COVID-19 decision-support tool developed by Deep Bio Data"
+          loading="lazy"
+          decoding="async"
+          widths={[400, 704]}
+          sizes="(max-width: 75rem) 100vw, 704px"
+          style="border-radius: 8px;"
+        />
+        <figcaption>
+          <strong>Fig. 01</strong> — COVID-19 decision-support tool: mortality risk from blood
+          biomarkers, pneumonia prediction from X-ray imaging and geographic spread modeling.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Public health decision making -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Supporting public-health decision making</h2>
+        <p class="lede">
+          Our predictive systems contributed to analytical and operational support activities
+          aligned with European public-health objectives during the pandemic response period.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <div class="reveal">
+          <ul>
+            <li>Early detection of high-risk diffusion zones</li>
+            <li>Resource prioritization and planning</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <ul>
+            <li>Evaluation of intervention effectiveness</li>
+            <li>Mitigation-strategy optimization</li>
+            <li>Reduction of healthcare-system overload risk</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top: var(--space-6);">
+        <p>
+          The ultimate objective was to help reduce both the <strong>human impact</strong>
+          — severe illness and mortality — and the <strong>economic and societal
+          disruption</strong> associated with uncontrolled diffusion.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capacidades -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section-head">
+        <p class="overline">Capabilities</p>
+        <h2>Advanced AI &amp; predictive modeling</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="card reveal">
+          <span class="overline">01</span>
+          <h3>Clinical Predictive Systems</h3>
+          <ul>
+            <li>Disease-risk prediction</li>
+            <li>Outcome forecasting</li>
+            <li>Personalized risk stratification</li>
+            <li>Multimodal clinical modeling</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="overline">02</span>
+          <h3>Medical Imaging AI</h3>
+          <ul>
+            <li>CNN and Transformer-based imaging analysis</li>
+            <li>Radiomics and multimodal fusion</li>
+            <li>Explainable imaging intelligence</li>
+            <li>White-box reconstruction of deep models</li>
+          </ul>
+        </article>
+
+        <article class="card reveal">
+          <span class="overline">03</span>
+          <h3>Bias-Control &amp; Causal AI</h3>
+          <ul>
+            <li>Statistical bias identification</li>
+            <li>Propensity-score methodologies</li>
+            <li>Causal inference pipelines</li>
+            <li>Fairness and robustness validation</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explainable -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Explainable &amp; trustworthy AI</h2>
+        <p class="lede">
+          A major focus of our work is ensuring that advanced AI systems remain transparent,
+          auditable and clinically meaningful.
+        </p>
+      </div>
+      <ul class="list-cols reveal">
+        <li>Explaining model decisions</li>
+        <li>Identifying clinically relevant predictive mechanisms</li>
+        <li>Detecting hidden biases and shortcut learning</li>
+        <li>Reconstructing black-box models into white-box systems</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Research & collaboration -->
+  <section class="section section--warm">
+    <div class="container">
+      <div class="section-head">
+        <h2>Research &amp; collaboration</h2>
+        <p class="lede">Deep Bio Data actively collaborates with:</p>
+      </div>
+      <ul class="list-cols reveal">
+        <li>Clinical research groups</li>
+        <li>Hospitals and healthcare institutions</li>
+        <li>Biomedical innovation programs</li>
+        <li>Academic and public-health partners</li>
+      </ul>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Bring our experience to your project"
+    text="From pandemic modeling to clinical imaging AI — we have done it before, and we can explain every step of it."
+  />
+</BaseLayout>
