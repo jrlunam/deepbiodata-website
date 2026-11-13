@@ -1,0 +1,18 @@
+---
+import Localized404 from '../components/Localized404.astro';
+
+// Catch-all solo en el servidor (no se prerenderiza): cualquier ruta
+// inexistente recibe la 404 de su idioma con estado HTTP 404, en lugar de la
+// pagina generica de Astro. Las 404 prerenderizadas (en|es|pt)/404 tienen
+// prioridad y siguen existiendo como archivos estaticos.
+export const prerender = false;
+
+const lang = Astro.url.pathname.startsWith('/es')
+  ? 'es'
+  : Astro.url.pathname.startsWith('/pt')
+    ? 'pt'
+    : 'en';
+Astro.response.status = 404;
+---
+
+<Localized404 lang={lang} />
